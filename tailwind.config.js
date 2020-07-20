@@ -59,9 +59,11 @@ module.exports = {
       './src/**/*.html',
       './src/**/*.vue',
     ],
-    whitelist: [
-      'text-red', 'text-blue', 'text-yellow', 'text-green', 'text-basic', 'bg-red', 'bg-blue', 'bg-yellow', 'bg-green', 'bg-basic', 'text-primary-1', 'text-primary-2', 'text-primary-3', 'text-accent-1', 'text-accent-2', 'text-highlight', 'text-label', 'text-shadow', 'text-transparent', 'text-success', 'text-danger', 'text-warning', 'text-info', 'bg-primary-1', 'bg-primary-2', 'bg-primary-3', 'bg-accent-1', 'bg-accent-2', 'bg-highlight', 'bg-label', 'bg-shadow', 'bg-transparent', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info'
-    ]
+    options: {
+      whitelist: [
+        'text-red', 'text-blue', 'text-yellow', 'text-green', 'text-basic', 'bg-red', 'bg-blue', 'bg-yellow', 'bg-green', 'bg-basic', 'text-primary-1', 'text-primary-2', 'text-primary-3', 'text-accent-1', 'text-accent-2', 'text-highlight', 'text-label', 'text-shadow', 'text-transparent', 'text-success', 'text-danger', 'text-warning', 'text-info', 'bg-primary-1', 'bg-primary-2', 'bg-primary-3', 'bg-accent-1', 'bg-accent-2', 'bg-highlight', 'bg-label', 'bg-shadow', 'bg-transparent', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info'
+      ]
+    }
   },
   
 }
