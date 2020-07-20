@@ -1,6 +1,7 @@
 const state = {
     theme: 'dark',
     showMenu: false,
+    soundOn: true,
     showSettings: false,
     showSideBarOnTop: false,
     leftMacroSlotList: [
@@ -50,6 +51,7 @@ const getters = {
     getTheme: state => state.theme,
     isMenuOpen: state => state.showMenu,
     isSettingsOpen: state => state.showSettings,
+    isSoundOn: state => state.soundOn,
     isSideBarOnTopActive: state => state.showSideBarOnTop,
     getLeftMacroSlotList: state => state.leftMacroSlotList,
     getRightMacroSlotList: state => state.rightMacroSlotList

@@ -12,7 +12,7 @@
     >
       <div v-if="isSettingsOpen" class="flex items-center justify-between flex-grow space-x-2">
         <RollMacroSlot :macros="getRightMacroSlotList" />
-        <AppButton text="Roll" push wide inverted />
+        <AppButton text="Roll" push wide inverted @click="[null, playSound('axe-2')]" />
         <RollMacroSlot right isPressed :macros="getRightMacroSlotList" />
       </div>
     </transition>
@@ -24,12 +24,14 @@
 import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
 import RollMacroSlot from "@/components/roll/RollMacroSlot";
+import soundMixin from "../../mixins/soundMixin";
 
 export default {
   components: {
     AppButton,
     RollMacroSlot
   },
+  mixins: [soundMixin],
   data() {
     return {};
   },
