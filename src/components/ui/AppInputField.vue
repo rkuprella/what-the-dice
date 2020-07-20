@@ -2,7 +2,7 @@
   <input
     :type="type"
     id="name"
-    class="w-full h-16 text-lg transition-colors duration-150 bg-transparent rounded-xl focus:outline-none text-highlight focus:bg-accent-1 placeholder-label focus:shadow-outline"
+    class="w-full h-16 text-lg transition-colors duration-150 bg-transparent rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline"
     :class="centered ? 'text-center px-12' : 'pl-4 pr-12'"
     :placeholder="placeholder"
     :value="value"
