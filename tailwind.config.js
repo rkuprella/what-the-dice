@@ -6,6 +6,7 @@ module.exports = {
       'success': 'var(--success)',
       'danger': 'var(--danger)',
       'info': 'var(--info)',
+      'warning': 'var(--warning)',
       'primary-1': 'var(--primary-1)',
       'primary-2': 'var(--primary-2)',
       'primary-3': 'var(--primary-3)',
@@ -56,5 +57,6 @@ module.exports = {
     './public/**/*.html',
     './src/**/*.html',
     './src/**/*.vue',
-  ]
+  ],
+  whitelist: ['text-red', 'text-blue', 'text-yellow', 'text-green', 'text-basic', 'bg-red', 'bg-blue', 'bg-yellow', 'bg-green', 'bg-basic', 'text-primary-1', 'text-primary-2', 'text-primary-3', 'text-accent-1', 'text-accent-2', 'text-highlight', 'text-label', 'text-shadow', 'text-transparent', 'text-success', 'text-danger', 'text-warning', 'text-info', 'bg-primary-1', 'bg-primary-2', 'bg-primary-3', 'bg-accent-1', 'bg-accent-2', 'bg-highlight', 'bg-label', 'bg-shadow', 'bg-transparent', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info']
 }
