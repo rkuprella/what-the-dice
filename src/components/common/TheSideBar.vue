@@ -1,12 +1,12 @@
 <template>
-  <div class="relative w-full bg-primary-2">
+  <div class="relative w-full bg-basic">
     <ul class="flex flex-grow px-2 py-2 space-x-3 overflow-x-auto">
       <li class="flex items-center space-x-3">
         <AppButton size="lg" icon="meeple" color="yellow" />
         <div class="w-px h-6 bg-accent-3"></div>
       </li>
       <li class="flex items-center justify-center">
-        <AppButton size="lg" icon="axe" />
+        <AppButton size="lg" icon="axe" color="green" />
       </li>
     </ul>
     <transition

@@ -1,6 +1,6 @@
 <template>
-  <ul class="flex flex-wrap justify-center px-2 pb-4 space-x-4">
-    <li class="relative py-2" v-for="die in getAvailableDice" :key="die.id">
+  <ul class="flex flex-wrap justify-center px-2 pb-4">
+    <li class="relative py-2 m-1" v-for="die in getAvailableDice" :key="die.id">
       <AppButton :icon="die.icon" size="xl" color="basic" />
       <!-- label -->
       <div

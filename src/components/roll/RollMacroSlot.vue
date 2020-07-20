@@ -8,32 +8,41 @@
       :icon="isPressed ? 'fa-sort-down' : ''"
     />
     <ul
-      class="absolute bottom-0 right-0 flex flex-col mb-16 -mr-1 space-y-2"
+      class="absolute bottom-0 flex flex-col mb-16 space-y-2"
+      :class="right ? '-mr-1 right-0' : '-ml-1 left-0'"
       v-if="macros && isPressed"
     >
-      <transition
+      <li
+        class="flex items-center justify-end"
+        :class="right ? 'origin-bottom-right ' : 'origin-bottom-left flex-row-reverse'"
+      >
+        <div
+          class="flex items-center justify-between p-1 bg-basic rounded-xl"
+          :class="right ? '' : 'flex-row-reverse'"
+        >
+          <button class="py-4 pl-4 pr-2 mr-2 focus:outline-none">Add Set</button>
+          <div class="overflow-hidden rounded-full">
+            <AppButton icon="fa-plus" size="lg" color="primary-1" class="p-1" @click.stop />
+          </div>
+        </div>
+      </li>
+      <li
         v-for="(macro,i) in macros"
         :key="macro.id"
-        enter-class="scale-0"
-        :enter-active-class="'transition-transform duration-200 ease-out transform delay-' + i * 50"
-        enter-to-class="scale-100"
-        leave-class="scale-100"
-        :leave-active-class="'transition-transform duration-200 ease-in transform delay-' + i * 50"
-        leave-to-class="scale-0"
+        class="flex items-center justify-end"
+        :class="right ? 'origin-bottom-right ' : 'origin-bottom-left flex-row-reverse'"
       >
-        <li
-          class="flex items-center justify-end origin-bottom-right transform"
-          v-if="macros && isPressed"
+        <AppButton color="danger" size="sm" icon="fa-times" @click="removeItem(i)" />
+        <div
+          class="flex items-center justify-between p-1 bg-accent-1 rounded-xl"
+          :class="right ? '' : 'flex-row-reverse'"
         >
-          <AppButton color="danger" size="sm" icon="fa-times" @click="removeItem(i)" />
-          <div class="flex items-center justify-between p-1 bg-accent-1 rounded-xl">
-            <button class="py-4 pl-4 pr-2 mr-2 focus:outline-none">{{ macro.diceCode }}</button>
-            <div class="overflow-hidden rounded-full bg-shadow">
-              <AppButton :icon="macro.icon" size="lg" :color="macro.color" class="p-1" @click.stop />
-            </div>
+          <button class="py-4 pl-4 pr-2 mr-2 focus:outline-none">{{ macro.diceCode }}</button>
+          <div class="overflow-hidden rounded-full bg-shadow">
+            <AppButton :icon="macro.icon" size="lg" :color="macro.color" class="p-1" @click.stop />
           </div>
-        </li>
-      </transition>
+        </div>
+      </li>
     </ul>
   </div>
 </template>

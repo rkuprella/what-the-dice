@@ -18,7 +18,7 @@
       enter-active-class="transition-opacity duration-300"
       enter-to-class="opacity-100"
       leave-class="opacity-100"
-      leave-active-class="transition-opacity duration-300"
+      leave-active-class="transition-opacity duration-300 pointer-events-none"
       leave-to-class="opacity-0"
     >
       <button

@@ -11,7 +11,7 @@
       mode="out-in"
     >
       <div v-if="isSettingsOpen" class="flex items-center justify-between flex-grow space-x-2">
-        <RollMacroSlot :macros="getLeftMacroSlotList" />
+        <RollMacroSlot :macros="getRightMacroSlotList" />
         <AppButton text="Roll" push wide inverted />
         <RollMacroSlot right isPressed :macros="getRightMacroSlotList" />
       </div>
