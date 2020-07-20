@@ -1,0 +1,90 @@
+<template>
+  <div
+    id="app"
+    class="relative h-screen overflow-hidden antialiased bg-primary-3"
+    :data-theme="getTheme"
+  >
+    <!-- main area -->
+    <div class="flex flex-col h-full" :class="isSideBarOnTopActive ? 'pb-2 pt-18' : 'py-2'">
+      <RollDiceCode />
+      <RollScrollArea />
+      <RollDicePicker />
+      <RollMenu />
+    </div>
+
+    <!-- side area -->
+    <transition
+      enter-class="opacity-0"
+      enter-active-class="transition-opacity duration-300"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-active-class="transition-opacity duration-300"
+      leave-to-class="opacity-0"
+    >
+      <button
+        class="absolute inset-0 w-full h-full bg-shadow focus:outline-none"
+        v-if="isMenuOpen"
+        @click="closeMenu"
+      ></button>
+    </transition>
+    <transition
+      enter-class="-translate-y-full"
+      enter-active-class="transition-transform duration-100 ease-out delay-100 transform"
+      enter-to-class="translate-y-0"
+      leave-class="translate-y-0"
+      leave-active-class="transition-transform duration-100 ease-in delay-100 transform"
+      leave-to-class="-translate-y-full"
+    >
+      <div class="absolute inset-x-0 top-0 z-20" v-if="isMenuOpen || isSideBarOnTopActive">
+        <TheSideBar />
+      </div>
+    </transition>
+    <transition
+      enter-class="-translate-x-full"
+      enter-active-class="transition-transform duration-200 ease-out transform"
+      enter-to-class="translate-x-0"
+      leave-class="translate-x-0"
+      leave-active-class="transition-transform duration-200 ease-in transform"
+      leave-to-class="-translate-x-full"
+    >
+      <div
+        class="absolute inset-0 flex flex-grow h-full bg-primary-3"
+        style="max-width:24rem; width:90%;"
+        v-if="isMenuOpen"
+      >
+        <TheChat />
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+import RollDiceCode from "@/components/roll/RollDiceCode";
+import RollScrollArea from "@/components/roll/RollScrollArea";
+import RollDicePicker from "@/components/roll/RollDicePicker";
+import RollMenu from "@/components/roll/RollMenu";
+import TheChat from "@/components/common/TheChat";
+import TheSideBar from "@/components/common/TheSideBar";
+
+export default {
+  name: "App",
+  components: {
+    RollDiceCode,
+    RollScrollArea,
+    RollDicePicker,
+    RollMenu,
+    TheChat,
+    TheSideBar
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters(["isMenuOpen", "getTheme", "isSideBarOnTopActive"])
+  },
+  methods: {
+    ...mapActions(["closeMenu"])
+  }
+};
+</script>
