@@ -53,6 +53,7 @@
         v-if="isMenuOpen"
       >
         <TheChat />
+        <!-- test -->
       </div>
     </transition>
   </div>
