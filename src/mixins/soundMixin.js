@@ -17,7 +17,8 @@ export default {
           this.audio.pause();
         }
         const { soundFile } = this.getSound(sound);
-        this.audio = new Audio(soundFile);
+        const audioTrack = require('../assets/sounds/' + soundFile);
+        this.audio = new Audio(audioTrack);
         this.audio.volume = volume;
         this.audio.play();
       }

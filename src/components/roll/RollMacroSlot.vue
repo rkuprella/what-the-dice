@@ -1,11 +1,9 @@
 <template>
   <div class="relative">
     <AppButton
-      border
       @click="isPressed =! isPressed"
-      :inverted="isPressed"
-      color="accent-2"
-      :icon="isPressed ? 'fa-sort-down' : ''"
+      color="accent-3"
+      :icon="isPressed ? 'fa-caret-down' : 'fa-caret-up'"
     />
     <ul
       class="absolute bottom-0 flex flex-col mb-16 space-y-2"

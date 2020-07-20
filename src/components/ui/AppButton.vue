@@ -3,7 +3,7 @@
     :type="type"
     aria-label="Button"
     class="flex flex-col items-center justify-center overflow-hidden focus:outline-none focus:shadow-outline"
-    :class="[ inverted ? 'bg-' + color : '', border ? 'border-2 border-accent-1 w-12 h-12 rounded-full' : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'transition-colors duration-150 ease active:bg-shadow' : push && !wide }, { 'transition-transform duration-100 ease transform active:translate-y-2px' : push && wide }]"
+    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'transition-colors duration-150 ease active:bg-shadow' : push && !wide }, { 'transition-transform duration-100 ease transform active:translate-y-2px' : push && wide }]"
     v-on="$listeners"
     v-bind="$attrs"
   >
@@ -59,11 +59,6 @@ export default {
     },
     // Push animation when pressed
     push: {
-      type: Boolean,
-      required: false
-    },
-    // Only borders, no bg
-    border: {
       type: Boolean,
       required: false
     },

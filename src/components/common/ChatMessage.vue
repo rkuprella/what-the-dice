@@ -3,7 +3,7 @@
     <AppIcon
       v-if="userIcon && user !== 'Quabbe'"
       :icon="userIcon"
-      class="flex-shrink-0 w-10 h-10 mr-2 -ml-1"
+      class="flex-shrink-0 hidden w-10 h-10 mr-2 -ml-1 sm:block"
       :class="[userColor ? 'text-' + userColor : '']"
     />
     <p>
