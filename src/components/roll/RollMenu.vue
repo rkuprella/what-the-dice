@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-between h-16 px-4 space-x-2">
-    <AppButton push icon="fa-keyboard" @click="toggleSettings" />
+    <AppButton push icon="fa-keyboard" @click="toggleSettings" :isPressed="isSettingsOpen" />
     <transition
       enter-class="scale-50 translate-y-1/2 opacity-0"
       enter-active-class="transition duration-150 ease-out transform"
@@ -11,12 +11,18 @@
       mode="out-in"
     >
       <div v-if="isSettingsOpen" class="flex items-center justify-between flex-grow space-x-2">
-        <RollMacroSlot :macros="getRightMacroSlotList" />
+        <RollMacroSlot v-if="isAllOptionsActive" :macros="getRightMacroSlotList" icon="fa-history" />
         <AppButton text="Roll" push wide inverted @click="[null, playSound('shake-and-roll')]" />
-        <RollMacroSlot right isPressed :macros="getRightMacroSlotList" />
+        <RollMacroSlot
+          v-if="isAllOptionsActive"
+          right
+          isPressed
+          :macros="getRightMacroSlotList"
+          icon="fa-star"
+        />
       </div>
     </transition>
-    <AppButton @click="toggleMenu" push icon="bars" />
+    <AppButton @click="toggleMenu" push icon="bars" :isPressed="isMenuOpen" />
   </div>
 </template>
 
@@ -37,7 +43,9 @@ export default {
   },
   computed: {
     ...mapGetters([
+      "isMenuOpen",
       "isSettingsOpen",
+      "isAllOptionsActive",
       "getLeftMacroSlotList",
       "getRightMacroSlotList"
     ])

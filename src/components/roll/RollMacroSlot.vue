@@ -4,7 +4,8 @@
       @click="isPressed =! isPressed"
       push
       color="accent-3"
-      :icon="isPressed ? 'fa-caret-down' : 'fa-caret-up'"
+      :icon="icon"
+      :isPressed="isPressed"
     />
     <ul
       class="absolute bottom-0 flex flex-col mb-16 space-y-2"
@@ -61,6 +62,10 @@ export default {
     },
     macros: {
       type: Array,
+      required: true
+    },
+    icon: {
+      type: String,
       required: true
     }
   },

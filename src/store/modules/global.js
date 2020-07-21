@@ -1,6 +1,7 @@
 const state = {
     theme: 'dark',
     showMenu: false,
+    allOptions: false,
     soundOn: true,
     showSettings: false,
     showSideBarOnTop: false,
@@ -50,6 +51,7 @@ const state = {
 const getters = {
     getTheme: state => state.theme,
     isMenuOpen: state => state.showMenu,
+    isAllOptionsActive: state => state.allOptions,
     isSettingsOpen: state => state.showSettings,
     isSoundOn: state => state.soundOn,
     isSideBarOnTopActive: state => state.showSideBarOnTop,
@@ -63,6 +65,9 @@ const mutations = {
     },
     TOGGLE_MENU: (state) => {
         state.showMenu = !state.showMenu;
+    },
+    TOGGLE_ALL_OPTIONS: (state) => {
+        state.allOptions = !state.allOptions;
     },
     CLOSE_MENU: (state) => {
         state.showMenu = false;
@@ -81,6 +86,9 @@ const actions = {
     },
     toggleMenu({ commit }) {
         commit('TOGGLE_MENU')
+    },
+    toggleAllOptions({ commit }) {
+        commit('TOGGLE_ALL_OPTIONS')
     },
     closeMenu({ commit }) {
         commit('CLOSE_MENU')

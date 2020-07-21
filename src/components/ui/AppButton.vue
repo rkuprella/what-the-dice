@@ -2,15 +2,15 @@
   <button
     :type="type"
     aria-label="Button"
-    class="flex flex-col items-center justify-center overflow-hidden focus:outline-none focus:shadow-outline"
-    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'transition-colors duration-150 ease active:bg-shadow' : push && !wide }, { 'transition-transform duration-100 ease transform active:translate-y-2px' : push && wide }]"
+    class="flex flex-col items-center justify-center overflow-hidden transition duration-150 focus:outline-none ease focus:shadow-outline"
+    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'active:bg-shadow' : push && !wide }, { 'transform active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }]"
     v-on="$listeners"
     v-bind="$attrs"
   >
     <!-- icon -->
     <div
-      class="flex items-center justify-center"
-      :class="[ size === 'xl' ? 'w-16 h-16' : 'w-12 h-12', inverted ? 'text-primary-3' : 'text-' + color, { 'transition-transform duration-100 ease transform active:translate-y-2px' : push }]"
+      class="flex items-center justify-center transition duration-150 transform ease"
+      :class="[ size === 'xl' ? 'w-16 h-16' : 'w-12 h-12', { 'text-primary-3' : inverted }, { 'active:translate-y-2px' : push }, isPressed ? 'translate-y-2px text-accent-2' : 'text-' + color ]"
       v-if="icon"
     >
       <AppIcon :icon="icon" :class="getIconSize" />
@@ -56,6 +56,10 @@ export default {
       type: String,
       required: false,
       default: "accent-3"
+    },
+    isPressed: {
+      type: Boolean,
+      required: false
     },
     // Push animation when pressed
     push: {

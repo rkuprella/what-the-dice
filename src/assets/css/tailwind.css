@@ -33,7 +33,7 @@
     --label: #605b6a;
 }
 
-button {
+button, input, label, .tap-highlight-none {
     -webkit-tap-highlight-color: transparent;
 }
 
