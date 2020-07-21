@@ -1,14 +1,16 @@
 <template>
-  <input
-    :type="type"
-    id="name"
-    class="w-full h-16 text-lg transition-colors duration-150 bg-transparent rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline"
-    :class="centered ? 'text-center px-12' : 'pl-4 pr-12'"
-    :placeholder="placeholder"
-    :value="value"
-    autocomplete="off"
-    @input="updateValue($event.target.value)"
-  />
+  <label :for="name" :aria-label="placeholder">
+    <input
+      :type="type"
+      :id="name"
+      class="w-full h-16 text-lg transition-colors duration-150 bg-transparent rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline"
+      :class="centered ? 'text-center px-12' : 'pl-4 pr-12'"
+      :placeholder="placeholder"
+      :value="value"
+      autocomplete="off"
+      @input="updateValue($event.target.value)"
+    />
+  </label>
 </template>
 
 <script>
