@@ -48,7 +48,7 @@
       leave-to-class="-translate-x-full"
     >
       <div
-        class="absolute inset-0 flex flex-grow h-full mr-16 bg-primary-3 sm:mr-auto sm:w-3/4"
+        class="absolute inset-0 flex flex-grow h-full mr-16 bg-primary-3 sm:mr-auto sm:w-4/5"
         v-if="isMenuOpen"
       >
         <TheChat />

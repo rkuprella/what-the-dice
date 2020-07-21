@@ -2,6 +2,7 @@
   <div class="relative">
     <AppButton
       @click="isPressed =! isPressed"
+      push
       color="accent-3"
       :icon="isPressed ? 'fa-caret-down' : 'fa-caret-up'"
     />
