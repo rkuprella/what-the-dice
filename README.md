@@ -1,7 +1,7 @@
-# what-the-dice
+# What The Dice
+**In development**
 https://whatthedice.netlify.app/
 
-**In development**
 A dice roller with chat rooms and initiative tracker
 Web app (PWA) with offline functionality
 
