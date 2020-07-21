@@ -84,7 +84,24 @@ export default {
     ...mapGetters(["isMenuOpen", "getTheme", "isSideBarOnTopActive"])
   },
   methods: {
-    ...mapActions(["closeMenu"])
+    ...mapActions(["closeMenu", "toggleTheme"])
+  },
+  created() {
+    let theme = "light";
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "dark") {
+        theme = "dark";
+      }
+    } else if (!window.matchMedia) {
+      return false;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme = "dark";
+    }
+    if (theme === "dark") {
+      this.toggleTheme();
+      const theme = this.getTheme;
+      localStorage.setItem("theme", theme);
+    }
   }
 };
 </script>

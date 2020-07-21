@@ -1,16 +1,12 @@
 <template>
   <div
-    class="relative transition-colors duration-100 ease-in border select-none focus:outline-none rounded-xl tap-highlight-none focus:shadow-outline bg-primary-2 border-accent-1 text-accent-1 hover:text-accent-3 focus:text-accent-3"
-    :class="{ 'text-accent-3' : isOpen }"
+    class="relative transition-colors duration-100 border select-none ease focus:outline-none rounded-xl tap-highlight-none focus:shadow-outline bg-primary-2 border-accent-1 text-accent-1 hover:text-accent-3 focus:text-accent-3"
+    :class="isOpen ? 'text-accent-3' : 'text-accent-1' "
     tabindex="0"
     @keypress.self.space.enter="toggleOpen"
     v-click-outside="closeOpen"
   >
-    <div
-      class="w-48 px-4 py-3 cursor-pointer text-accent-3"
-      :class="isOpen"
-      @click="toggleOpen"
-    >{{ selected }}</div>
+    <div class="w-48 px-4 py-3 cursor-pointer text-accent-3" @click="toggleOpen">{{ selected }}</div>
     <AppIcon
       icon="fa-caret-down"
       class="absolute inset-y-0 right-0 w-4 h-6 h-full mr-3 transition-transform duration-300 transform pointer-events-none ease"
@@ -21,7 +17,7 @@
       :class="[{'hidden' : !isOpen}, top ? 'bottom-0 mb-14' : 'mt-2']"
     >
       <div
-        class="px-4 py-3 rounded-lg cursor-pointer text-label hover:text-accent-3 bg-primary-2 focus:outline-none focus:text-accent-3"
+        class="px-4 py-3 rounded-lg cursor-pointer text-label hover:text-accent-3 bg-primary-2 focus:outline-none focus:text-accent-3 active:text-accent-3"
         v-for="option in options"
         :key="option"
         tabindex="0"

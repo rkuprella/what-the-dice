@@ -2,10 +2,10 @@
   <svg
     xmlns="http://www.w3.org/2000/svg"
     role="img"
-    aria-labelledby="desc"
+    :aria-labelledby="getIcon.name"
     :viewBox="getIcon.viewBox"
   >
-    <desc id="desc">Icon {{ getIcon.name }} by {{ getIcon.author }}</desc>
+    <desc :id="getIcon.name">Icon {{ getIcon.name }} by {{ getIcon.author }}</desc>
     <path :d="getIcon.path" fill="currentColor" />
   </svg>
 </template>

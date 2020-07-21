@@ -12,7 +12,7 @@
       />
     </div>
     <div class="relative flex h-16 px-4 space-x-2">
-      <AppButton icon="fa-cog" size="sm" @click="toggleTheme" />
+      <AppButton icon="fa-cog" size="sm" @click="setTheme" />
       <AppInputField
         v-model="text"
         type="text"
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
 import AppInputField from "@/components/ui/AppInputField";
 import ChatMessage from "@/components/common/ChatMessage";
@@ -104,8 +104,16 @@ export default {
       ]
     };
   },
+  computed: {
+    ...mapGetters(["getTheme"])
+  },
   methods: {
-    ...mapActions(["toggleTheme"])
+    ...mapActions(["toggleTheme"]),
+    setTheme() {
+      this.toggleTheme();
+      const theme = this.getTheme;
+      localStorage.setItem("theme", theme);
+    }
   }
 };
 </script>

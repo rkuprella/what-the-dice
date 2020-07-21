@@ -11,8 +11,8 @@
     --accent-1: #afacac;
     --accent-2: #ccc9c9;
     --accent-3: #9d9ca0;
-    --highlight: #7b7086;
-    --label: #7f7c85;
+    --highlight: #554e5c;
+    --label: #646169;
     --shadow: rgba(0,0,0,0.25);
     --transparent: rgba(0,0,0,0);
     --basic: #743ee9;
@@ -30,7 +30,7 @@
     --accent-2: #4e4747;
     --accent-3: #bcb9c3;
     --highlight: #f1f0f2;
-    --label: #605b6a;
+    --label: #7a7685;
 }
 
 button, input, label, .tap-highlight-none {

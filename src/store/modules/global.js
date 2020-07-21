@@ -1,5 +1,5 @@
 const state = {
-    theme: 'dark',
+    theme: 'light',
     showMenu: false,
     allOptions: false,
     soundOn: true,

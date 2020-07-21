@@ -52,8 +52,7 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    translate: ['responsive', 'hover', 'focus', 'active', 'group-focus'],
-    textColor: ['responsive', 'hover', 'focus', 'group-focus'],
+    translate: ['responsive', 'hover', 'focus', 'active'],
   },
   plugins: [],
   purge: {
