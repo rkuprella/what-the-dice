@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col flex-grow py-2 pt-16">
-    <div class="flex flex-col flex-grow px-4 py-2 space-y-2 overflow-y-auto">
+  <div class="flex flex-col flex-grow py-2 pt-16 lg:pt-0">
+    <div class="flex flex-col flex-grow px-2 my-2 space-y-2 overflow-y-auto">
       <ChatMessage
         v-for="message in messages"
         :key="message.id"
@@ -11,14 +11,14 @@
         :userColor="message.userColor"
       />
     </div>
-    <div class="relative flex h-16 px-4 space-x-2">
-      <AppButton icon="fa-cog" size="sm" @click="setTheme" />
+    <div class="relative flex h-16 px-2 lg:mb-2">
+      <AppButton icon="fa-cog" size="sm" @click="toggleTheme" class="mr-2 lg:hidden" />
       <AppInputField
         v-model="text"
         type="text"
         name="chatInput"
         placeholder="Enter Message"
-        class="flex-grow bg-primary-2 rounded-xl"
+        class="flex-grow"
       />
       <div class="absolute inset-y-0 right-0 flex items-center">
         <transition
@@ -108,12 +108,7 @@ export default {
     ...mapGetters(["getTheme"])
   },
   methods: {
-    ...mapActions(["toggleTheme"]),
-    setTheme() {
-      this.toggleTheme();
-      const theme = this.getTheme;
-      localStorage.setItem("theme", theme);
-    }
+    ...mapActions(["toggleTheme"])
   }
 };
 </script>

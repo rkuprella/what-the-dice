@@ -2,8 +2,8 @@
   <button
     :type="type"
     aria-label="Button"
-    class="flex flex-col items-center justify-center overflow-hidden transition duration-150 focus:outline-none ease focus:shadow-outline"
-    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'active:bg-shadow' : push && !wide }, { 'transform active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }]"
+    class="flex flex-col items-center justify-center overflow-hidden transition duration-150 transform select-none focus:outline-none ease focus:shadow-outline"
+    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }]"
     v-on="$listeners"
     v-bind="$attrs"
   >
@@ -19,8 +19,8 @@
     <!-- text -->
     <span
       v-if="text"
-      class="px-2 font-bold"
-      :class="[inverted ? 'text-primary-3' : 'text-label', icon && text ? 'text-lg mt-1' : 'text-xl']"
+      class="px-3 py-1 font-bold"
+      :class="['text-' + size, inverted ? 'text-primary-3' : 'text-label']"
     >{{ getText }}</span>
   </button>
 </template>

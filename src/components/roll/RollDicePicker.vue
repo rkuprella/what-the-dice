@@ -4,7 +4,7 @@
       <AppButton :icon="die.icon" size="xl" color="basic" />
       <!-- label -->
       <div
-        class="absolute bottom-0 px-2 py-1 -mb-2 text-sm transform -translate-x-1/2 rounded-lg pointer-events-none left-1/2 bg-primary-2 text-label"
+        class="absolute bottom-0 px-2 py-1 -mb-2 text-sm transform -translate-x-1/2 rounded-lg pointer-events-none select-none left-1/2 bg-primary-2 text-label"
       >{{ die.name }}</div>
     </li>
   </ul>

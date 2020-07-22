@@ -12,7 +12,7 @@
     >
       <div v-if="isSettingsOpen" class="flex items-center justify-between flex-grow space-x-2">
         <RollMacroSlot v-if="isAllOptionsActive" :macros="getRightMacroSlotList" icon="fa-history" />
-        <AppButton text="Roll" wide inverted @click="[null, playSound('shake-and-roll')]" />
+        <RollButton />
         <RollMacroSlot
           v-if="isAllOptionsActive"
           right
@@ -22,20 +22,22 @@
         />
       </div>
     </transition>
-    <AppButton @click="toggleMenu" push icon="bars" :isPressed="isMenuOpen" />
+    <AppButton @click="toggleMenu" push icon="bars" :isPressed="isMenuOpen" class="lg:hidden" />
   </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
+import RollButton from "@/components/roll/RollButton";
 import RollMacroSlot from "@/components/roll/RollMacroSlot";
 import soundMixin from "@/mixins/soundMixin";
 
 export default {
   components: {
     AppButton,
-    RollMacroSlot
+    RollMacroSlot,
+    RollButton
   },
   mixins: [soundMixin],
   data() {

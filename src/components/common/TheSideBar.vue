@@ -1,9 +1,11 @@
 <template>
-  <div class="relative w-full bg-basic">
-    <ul class="flex flex-grow px-2 py-2 space-x-3 overflow-x-auto">
-      <li class="flex items-center space-x-3">
+  <div class="relative w-full bg-primary-2 lg:h-full lg:w-auto">
+    <ul
+      class="flex flex-grow px-2 py-2 space-x-3 overflow-x-auto lg:flex-col lg:space-y-3 lg:space-x-0"
+    >
+      <li class="flex items-center space-x-3 lg:flex-col lg:space-y-3 lg:space-x-0">
         <AppButton size="lg" icon="meeple" color="yellow" />
-        <div class="w-px h-6 bg-accent-3"></div>
+        <div class="w-px h-6 bg-accent-1 lg:w-6 lg:h-px"></div>
       </li>
       <li class="flex items-center justify-center">
         <AppButton size="lg" icon="axe" color="green" />
@@ -20,7 +22,7 @@
       <AppButton
         icon="fa-thumbtack"
         size="sm"
-        class="absolute"
+        class="absolute lg:hidden"
         :color="isSideBarOnTopActive ? 'basic' : 'accent-1'"
         style="bottom:-3.5rem; right:0.5rem"
         v-if="isMenuOpen"

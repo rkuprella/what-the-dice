@@ -1,5 +1,5 @@
 <template>
-  <div class="relative" v-click-outside="removePressed">
+  <div class="relative" v-click-outside="removePressed" @keydown.esc="removePressed">
     <AppButton
       @click="isPressed =! isPressed"
       push

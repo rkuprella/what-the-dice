@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col flex-grow h-full px-4 py-2 space-y-2">
     <button
-      class="relative flex items-center justify-center flex-grow py-8 transition-colors duration-150 border-2 rounded-xl focus:outline-none"
+      class="relative flex items-center justify-center flex-grow py-8 transition-colors duration-150 border-2 cursor-default rounded-xl focus:outline-none"
       v-for="(table, i) in tables"
       :key="i"
       @click="toggleTable(i)"

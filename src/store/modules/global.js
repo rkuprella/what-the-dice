@@ -62,6 +62,7 @@ const getters = {
 const mutations = {
     TOGGLE_THEME: (state) => {
         state.theme = state.theme === 'dark' ? 'light' : 'dark'
+        localStorage.setItem("theme", state.theme);
     },
     TOGGLE_MENU: (state) => {
         state.showMenu = !state.showMenu;
