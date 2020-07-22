@@ -62,7 +62,7 @@
         leave-to-class="-translate-x-full lg:translate-x-full"
       >
         <div
-          class="absolute inset-0 flex flex-grow h-full mr-16 bg-primary-3 sm:mr-auto sm:w-4/5 lg:relative md:w-1/3 lg:w-92 lg:flex-grow-0 lg:flex-shrink-0"
+          class="absolute inset-0 flex flex-grow h-full mr-16 bg-primary-3 sm:mr-auto sm:w-92 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
           v-show="isMenuOpen"
         >
           <TheChat />
