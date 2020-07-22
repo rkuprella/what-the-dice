@@ -1,5 +1,5 @@
 <template>
-  <div class="relative">
+  <div class="relative" v-click-outside="removePressed">
     <AppButton
       @click="isPressed =! isPressed"
       push
@@ -50,6 +50,7 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
+import ClickOutside from "vue-click-outside";
 
 export default {
   components: {
@@ -77,7 +78,16 @@ export default {
   methods: {
     removeItem(index) {
       this.macros.splice(index, 1);
+    },
+    removePressed() {
+      this.isPressed = false;
     }
+  },
+  mounted() {
+    this.popupItem = this.$el;
+  },
+  directives: {
+    ClickOutside
   }
 };
 </script>

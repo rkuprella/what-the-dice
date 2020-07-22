@@ -12,7 +12,7 @@
     >
       <div v-if="isSettingsOpen" class="flex items-center justify-between flex-grow space-x-2">
         <RollMacroSlot v-if="isAllOptionsActive" :macros="getRightMacroSlotList" icon="fa-history" />
-        <AppButton text="Roll" push wide inverted @click="[null, playSound('shake-and-roll')]" />
+        <AppButton text="Roll" wide inverted @click="[null, playSound('shake-and-roll')]" />
         <RollMacroSlot
           v-if="isAllOptionsActive"
           right

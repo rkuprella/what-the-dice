@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col items-center justify-center space-y-4">
     <AppIcon icon="dandd" class="w-32 h-32 text-basic" />
+
     <AppInputSelect v-model="selected" :options="['D&D 5e', 'Shadowhunt', 'WH40k']" />
+
     <AppCheckBox text="Give me all the options" id="options" v-model="options" />
   </div>
 </template>

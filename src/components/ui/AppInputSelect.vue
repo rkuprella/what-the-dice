@@ -3,13 +3,14 @@
     class="relative transition-colors duration-100 border select-none ease focus:outline-none rounded-xl tap-highlight-none focus:shadow-outline bg-primary-2 border-accent-1 text-accent-1 hover:text-accent-3 focus:text-accent-3"
     :class="isOpen ? 'text-accent-3' : 'text-accent-1' "
     tabindex="0"
-    @keypress.self.space.enter="toggleOpen"
-    v-click-outside="closeOpen"
+    @keypress.self.space.enter="toggleOptions"
+    @keydown.esc="closeOptions"
+    v-click-outside="closeOptions"
   >
-    <div class="w-48 px-4 py-3 cursor-pointer text-accent-3" @click="toggleOpen">{{ selected }}</div>
+    <div class="w-48 px-4 py-3 cursor-pointer text-accent-3" @click="toggleOptions">{{ selected }}</div>
     <AppIcon
       icon="fa-caret-down"
-      class="absolute inset-y-0 right-0 w-4 h-6 h-full mr-3 transition-transform duration-300 transform pointer-events-none ease"
+      class="absolute inset-y-0 right-0 w-4 h-full mr-3 transition-transform duration-300 transform pointer-events-none ease"
       :class="{ '-rotate-180' : isOpen }"
     />
     <div
@@ -21,8 +22,8 @@
         v-for="option in options"
         :key="option"
         tabindex="0"
-        @click="[ selected = option, isOpen = false, $emit('input', option)]"
-        @keypress.space.enter="[ selected = option, isOpen = false, $emit('input', option)]"
+        @click="[selected = option, closeOptions(), $emit('input', option)]"
+        @keypress.space.enter="[selected = option, closeOptions(), $emit('input', option)]"
       >{{ option }}</div>
     </div>
   </div>
@@ -53,10 +54,10 @@ export default {
     };
   },
   methods: {
-    toggleOpen() {
+    toggleOptions() {
       this.isOpen = this.isOpen ? false : true;
     },
-    closeOpen() {
+    closeOptions() {
       this.isOpen = false;
     }
   },
