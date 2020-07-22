@@ -3,7 +3,7 @@
     <input
       :type="type"
       :id="name"
-      class="w-full h-16 text-lg transition-colors duration-150 rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline bg-primary-2 focus:bg-primary-1"
+      class="w-full h-16 text-lg transition-colors duration-150 lg:h-12 rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline bg-primary-2 focus:bg-primary-1"
       :class="centered ? 'text-center px-12' : 'pl-4 pr-12'"
       :placeholder="placeholder"
       :value="value"

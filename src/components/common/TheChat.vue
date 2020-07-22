@@ -11,7 +11,7 @@
         :userColor="message.userColor"
       />
     </div>
-    <div class="relative flex h-16 px-2 lg:mb-2">
+    <div class="relative flex px-2 lg:mb-2">
       <AppButton icon="fa-cog" size="sm" @click="toggleTheme" class="mr-2 lg:hidden" />
       <AppInputField
         v-model="text"

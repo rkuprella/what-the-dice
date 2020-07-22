@@ -3,7 +3,7 @@
     :type="type"
     aria-label="Button"
     class="flex flex-col items-center justify-center overflow-hidden transition duration-150 transform select-none focus:outline-none ease focus:shadow-outline"
-    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-16 flex-grow' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }]"
+    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }]"
     v-on="$listeners"
     v-bind="$attrs"
   >

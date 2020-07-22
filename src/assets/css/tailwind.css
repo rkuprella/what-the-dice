@@ -37,6 +37,10 @@ button, input, label, .tap-highlight-none {
     -webkit-tap-highlight-color: transparent;
 }
 
+body {
+    overscroll-behavior-y: none;
+}
+
 @tailwind components;
 
 @tailwind utilities;
