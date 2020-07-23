@@ -49,12 +49,16 @@ module.exports = {
       },
       transitionTimingFunction: {
         'bounce': 'cubic-bezier(0.175, 1.650, 0.545, 1.190)'
+      },
+      transitionDuration: {
+        '0': '0ms'
       }
     },
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     translate: ['responsive', 'hover', 'focus', 'active'],
+    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover']
   },
   plugins: [],
   purge: {

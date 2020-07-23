@@ -2,22 +2,25 @@
   <button
     type="button"
     aria-label="Button"
-    class="relative flex flex-col items-center justify-center transition duration-150 transform rounded-lg select-none focus:outline-none ease lg:focus:shadow-outline"
+    class="relative flex flex-col items-center justify-center transition duration-150 transform rounded-lg select-none group focus:outline-none ease lg:focus:shadow-outline"
     v-on="$listeners"
     v-bind="$attrs"
   >
     <!-- icon -->
     <div
-      class="flex items-center justify-center transition duration-150 transform ease"
+      class="flex items-center justify-center transition duration-150 transform ease lg:px-2 lg:pt-2"
       :class="'text-' + color"
       v-if="icon"
     >
-      <AppIcon :icon="icon" class="w-16 h-16 lg:w-12 lg:h-12" />
+      <AppIcon
+        :icon="icon"
+        class="w-16 h-16 duration-100 transform ease lg:w-10 lg:h-10 lg:transition-translate lg:group-hover:scale-125"
+      />
     </div>
     <!-- label -->
     <div
       v-if="label"
-      class="absolute bottom-0 px-2 py-1 -mb-4 text-sm transform -translate-x-1/2 rounded-lg pointer-events-none select-none lg:translate-x-0 lg:static lg:mb-0 left-1/2 bg-primary-2 lg:bg-transparent text-label"
+      class="absolute bottom-0 px-3 py-1 -mb-4 text-sm truncate transform -translate-x-1/2 rounded-lg pointer-events-none select-none lg:px-1 lg:w-16 lg:translate-x-0 lg:static lg:mb-0 left-1/2 bg-primary-2 lg:bg-transparent text-label"
     >{{ label }}</div>
   </button>
 </template>

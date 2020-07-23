@@ -1,20 +1,19 @@
 <template>
-  <div class="relative w-full lg:overflow-y-scroll bg-primary-4 lg:h-full lg:w-auto">
+  <div
+    class="relative w-full border-b-2 lg:overflow-y-auto bg-primary-4 border-primary-3 lg:border-none lg:h-full lg:w-auto"
+  >
     <ul
-      class="flex flex-grow px-2 py-2 space-x-3 overflow-x-auto lg:flex-col lg:space-y-3 lg:space-x-0 lg:overflow-x-visible"
+      class="flex flex-grow px-2 py-2 space-x-1 overflow-x-auto lg:flex-col lg:space-y-1 lg:space-x-0 lg:overflow-x-visible"
     >
-      <li class="flex items-center space-x-3 lg:flex-col lg:space-y-3 lg:space-x-0">
-        <AppButton size="lg" icon="meeple" color="yellow" />
-        <div class="w-px h-6 bg-accent-1 lg:w-6 lg:h-px"></div>
+      <li class="flex items-center space-x-2 lg:flex-col lg:space-y-4 lg:space-x-0 lg:my-3">
+        <div class="xl:justify-start xl:w-full xl:flex xl:items-center xl:pl-2">
+          <AppButton size="lg" icon="meeple" color="yellow" />
+          <div class="hidden ml-3 text-lg font-semibold text-yellow xl:block">Temple of Vue</div>
+        </div>
+        <div class="w-px h-6 bg-accent-1 lg:w-6 lg:h-px xl:w-16"></div>
       </li>
-      <li class="flex items-center justify-center">
-        <AppButton size="lg" icon="axe" color="green" />
-      </li>
-      <li class="flex items-center justify-center">
-        <AppButton size="lg" icon="axe" color="green" />
-      </li>
-      <li class="flex items-center justify-center">
-        <AppButton size="lg" icon="axe" color="green" />
+      <li class="flex items-center justify-center" v-for="n in 6" :key="n">
+        <UserButton icon="axe" label="Axewielder" />
       </li>
     </ul>
     <transition
@@ -41,10 +40,12 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
+import UserButton from "@/components/ui/UserButton";
 
 export default {
   components: {
     AppButton,
+    UserButton,
   },
   computed: {
     ...mapGetters(["isMenuOpen", "isSideBarOnTopActive"]),
