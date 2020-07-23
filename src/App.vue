@@ -10,7 +10,7 @@
     <!-- wrapper -->
     <div class="relative flex flex-grow overflow-hidden">
       <!-- roll history -->
-      <HistoryBar class="hidden lg:flex" v-if="isAllOptionsActive" />
+      <HistoryBar class="hidden lg:flex" />
 
       <!-- main area -->
       <div
@@ -68,7 +68,7 @@
         leave-to-class="-translate-y-full lg:translate-x-full lg:translate-y-0"
       >
         <div
-          class="absolute inset-x-0 top-0 z-20 flex-shrink-0 lg:static lg:w-18 xl:w-64"
+          class="absolute inset-x-0 top-0 z-20 flex-shrink-0 lg:static lg:w-18 xl:w-56"
           v-if="(isMenuOpen || isSideBarOnTopActive) && getCurrentRoom"
         >
           <TheSideBar />

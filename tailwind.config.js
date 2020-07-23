@@ -26,7 +26,7 @@ module.exports = {
       'sm': '426px',
       'md': '768px',
       'lg': '1024px',
-      'xl': '1280px',
+      'xl': '1366px',
     },
     extend: {
       boxShadow: {

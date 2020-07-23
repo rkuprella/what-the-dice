@@ -10,7 +10,7 @@
         <div class="xl:justify-start xl:w-full xl:flex xl:items-center xl:pl-2">
           <AppButton :icon="getCurrentRoom.icon" :color="getCurrentRoom.color" />
           <div
-            class="hidden ml-3 text-sm font-semibold xl:flex-col text-yellow xl:flex xl:flex-grow"
+            class="hidden ml-2 text-sm font-semibold xl:flex-col text-yellow xl:flex xl:flex-grow"
           >
             <span>{{ getCurrentRoom.name }}</span>
             <span class="text-xs text-label">Forge</span>
@@ -19,7 +19,7 @@
             icon="fa-signout"
             size="sm"
             color="label"
-            class="hidden mt-1 transform rotate-180 xl:block"
+            class="hidden transform rotate-180 xl:block"
             @click="leaveRoom"
           />
         </div>
@@ -70,10 +70,11 @@ export default {
     ...mapGetters(["isMenuOpen", "isSideBarOnTopActive", "getCurrentRoom"]),
   },
   methods: {
-    ...mapActions(["toggleTheme", "toggleSideBarOnTop"]),
+    ...mapActions(["toggleTheme", "toggleSideBarOnTop", "closeMenu"]),
     leaveRoom() {
       const payload = null;
       this.$store.dispatch("setCurrentRoom", payload);
+      this.closeMenu();
     },
   },
 };

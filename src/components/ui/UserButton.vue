@@ -7,8 +7,8 @@
     v-bind="$attrs"
   >
     <!-- icon -->
-    <div class="flex items-center justify-center rounded-full w-14 h-14" :class="'text-' + color">
-      <AppIcon :icon="icon" class="w-10 h-10" />
+    <div class="flex items-center justify-center w-12 h-12 rounded-full" :class="'text-' + color">
+      <AppIcon :icon="icon" class="w-8 h-8" />
     </div>
     <!-- label -->
     <div class="hidden ml-2 xl:block" :class="'text-' + color">{{ label }}</div>
