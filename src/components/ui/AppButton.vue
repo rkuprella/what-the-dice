@@ -2,7 +2,7 @@
   <button
     :type="type"
     aria-label="Button"
-    class="flex flex-col items-center justify-center overflow-hidden transition duration-150 transform select-none focus:outline-none ease focus:shadow-outline"
+    class="flex flex-col items-center justify-center overflow-hidden transition duration-150 transform select-none focus:outline-none ease lg:focus:shadow-outline"
     :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }]"
     v-on="$listeners"
     v-bind="$attrs"
@@ -30,52 +30,52 @@ import AppIcon from "@/components/ui/AppIcon";
 
 export default {
   components: {
-    AppIcon
+    AppIcon,
   },
   props: {
     icon: {
       type: String,
-      required: false
+      required: false,
     },
     text: {
       type: String,
-      required: false
+      required: false,
     },
     type: {
       type: String,
       required: false,
-      default: "button"
+      default: "button",
     },
     // sm | md | lg | xl
     size: {
       type: String,
       required: false,
-      default: "md"
+      default: "md",
     },
     color: {
       type: String,
       required: false,
-      default: "accent-3"
+      default: "accent-3",
     },
     isPressed: {
       type: Boolean,
-      required: false
+      required: false,
     },
     // Push animation when pressed
     push: {
       type: Boolean,
-      required: false
+      required: false,
     },
     // Takes the full available width
     wide: {
       type: Boolean,
-      required: false
+      required: false,
     },
     // Inverts colors
     inverted: {
       type: Boolean,
-      required: false
-    }
+      required: false,
+    },
   },
   computed: {
     getIconSize() {
@@ -90,7 +90,7 @@ export default {
     },
     getText() {
       return this.text.toUpperCase();
-    }
-  }
+    },
+  },
 };
 </script>

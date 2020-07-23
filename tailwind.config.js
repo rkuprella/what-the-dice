@@ -10,6 +10,7 @@ module.exports = {
       'primary-1': 'var(--primary-1)',
       'primary-2': 'var(--primary-2)',
       'primary-3': 'var(--primary-3)',
+      'primary-4': 'var(--primary-4)',
       'accent-1': 'var(--accent-1)',
       'accent-2': 'var(--accent-2)',
       'accent-3': 'var(--accent-3)',
@@ -64,7 +65,7 @@ module.exports = {
     ],
     options: {
       whitelist: [
-        'text-red', 'text-blue', 'text-yellow', 'text-green', 'text-basic', 'bg-red', 'bg-blue', 'bg-yellow', 'bg-green', 'bg-basic', 'text-primary-1', 'text-primary-2', 'text-primary-3', 'text-accent-1', 'text-accent-2', 'text-accent-3', 'text-highlight', 'text-label', 'text-shadow', 'text-transparent', 'text-success', 'text-danger', 'text-warning', 'text-info', 'bg-primary-1', 'bg-primary-2', 'bg-primary-3', 'bg-accent-1', 'bg-accent-2', 'bg-accent-3', 'bg-highlight', 'bg-label', 'bg-shadow', 'bg-transparent', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info', 'border-primary-1', 'border-primary-2', 'border-primary-3', 'border-accent-1', 'border-accent-2', 'border-accent-2', 'border-highlight', 'border-label', 'border-shadow', 'border-transparent', 'border-success', 'border-danger', 'border-warning', 'border-info', 'border-red', 'border-blue', 'border-yellow', 'border-green', 'border-basic',
+        'text-red', 'text-blue', 'text-yellow', 'text-green', 'text-basic', 'bg-red', 'bg-blue', 'bg-yellow', 'bg-green', 'bg-basic', 'text-primary-1', 'text-primary-2', 'text-primary-3', 'text-primary-4', 'text-accent-1', 'text-accent-2', 'text-accent-3', 'text-highlight', 'text-label', 'text-shadow', 'text-transparent', 'text-success', 'text-danger', 'text-warning', 'text-info', 'bg-primary-1', 'bg-primary-2', 'bg-primary-3', 'bg-primary-4', 'bg-accent-1', 'bg-accent-2', 'bg-accent-3', 'bg-highlight', 'bg-label', 'bg-shadow', 'bg-transparent', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info', 'border-primary-1', 'border-primary-2', 'border-primary-3', 'border-primary-4', 'border-accent-1', 'border-accent-2', 'border-accent-3', 'border-highlight', 'border-label', 'border-shadow', 'border-transparent', 'border-success', 'border-danger', 'border-warning', 'border-info', 'border-red', 'border-blue', 'border-yellow', 'border-green', 'border-basic',
       ]
     }
   },

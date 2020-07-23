@@ -25,21 +25,21 @@ import AppButton from "@/components/ui/AppButton";
 
 export default {
   components: {
-    AppButton
+    AppButton,
   },
   data() {
     return {
       tables: [
         {
           id: "91",
-          dice: ["d20"]
+          dice: ["d20"],
         },
         {
           id: "92",
-          dice: ["d12", "d8"]
-        }
+          dice: ["d12", "d8"],
+        },
       ],
-      currentTable: null
+      currentTable: null,
     };
   },
   methods: {
@@ -50,7 +50,7 @@ export default {
       } else {
         this.currentTable = i;
       }
-    }
-  }
+    },
+  },
 };
 </script>

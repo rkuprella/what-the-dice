@@ -1,11 +1,17 @@
 <template>
-  <div class="relative w-full bg-primary-2 lg:h-full lg:w-auto">
+  <div class="relative w-full lg:overflow-y-scroll bg-primary-4 lg:h-full lg:w-auto">
     <ul
-      class="flex flex-grow px-2 py-2 space-x-3 overflow-x-auto lg:flex-col lg:space-y-3 lg:space-x-0"
+      class="flex flex-grow px-2 py-2 space-x-3 overflow-x-auto lg:flex-col lg:space-y-3 lg:space-x-0 lg:overflow-x-visible"
     >
       <li class="flex items-center space-x-3 lg:flex-col lg:space-y-3 lg:space-x-0">
         <AppButton size="lg" icon="meeple" color="yellow" />
         <div class="w-px h-6 bg-accent-1 lg:w-6 lg:h-px"></div>
+      </li>
+      <li class="flex items-center justify-center">
+        <AppButton size="lg" icon="axe" color="green" />
+      </li>
+      <li class="flex items-center justify-center">
+        <AppButton size="lg" icon="axe" color="green" />
       </li>
       <li class="flex items-center justify-center">
         <AppButton size="lg" icon="axe" color="green" />
@@ -38,13 +44,13 @@ import AppButton from "@/components/ui/AppButton";
 
 export default {
   components: {
-    AppButton
+    AppButton,
   },
   computed: {
-    ...mapGetters(["isMenuOpen", "isSideBarOnTopActive"])
+    ...mapGetters(["isMenuOpen", "isSideBarOnTopActive"]),
   },
   methods: {
-    ...mapActions(["toggleTheme", "toggleSideBarOnTop"])
-  }
+    ...mapActions(["toggleTheme", "toggleSideBarOnTop"]),
+  },
 };
 </script>

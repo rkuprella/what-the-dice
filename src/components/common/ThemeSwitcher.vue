@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center space-y-4">
-    <img src="../../assets/images/logo-basic.png" alt="What The Dice Logo" width="312" height="128" />
+    <AppIcon icon="wtd-icon" class="w-32 h-32 text-basic" />
     <AppInputSelect v-model="selected" :options="['D&D 5e', 'Shadowhunt', 'WH40k']" />
 
     <AppCheckBox text="Give me all the options" id="options" v-model="options" />
@@ -16,13 +16,13 @@ import AppCheckBox from "@/components/ui/AppCheckBox";
 export default {
   data() {
     return {
-      selected: "D&D 5e"
+      selected: "D&D 5e",
     };
   },
   components: {
     AppIcon,
     AppInputSelect,
-    AppCheckBox
+    AppCheckBox,
   },
   computed: {
     options: {
@@ -31,8 +31,8 @@ export default {
       },
       get() {
         return this.$store.getters.isAllOptionsActive;
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>

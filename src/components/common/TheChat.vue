@@ -29,7 +29,7 @@
           leave-active-class="transition-opacity duration-150 delay-200"
           leave-to-class="opacity-0"
         >
-          <AppButton type="submit" icon="fa-plane" size="sm" class="mr-4" v-if="text" />
+          <AppButton type="submit" icon="fa-plane" size="sm" class="mr-3" v-if="text" />
         </transition>
       </div>
     </div>
@@ -46,7 +46,7 @@ export default {
   components: {
     AppButton,
     AppInputField,
-    ChatMessage
+    ChatMessage,
   },
   data() {
     return {
@@ -58,14 +58,14 @@ export default {
           userIcon: "axe",
           userColor: "blue",
           text: "Lorem ipsum dolor sit amet",
-          category: "comment"
+          category: "comment",
         },
         {
           id: "9sda21",
           user: "Server",
           userColor: "blue",
           text: "TheDude joined the room",
-          category: "event"
+          category: "event",
         },
         {
           id: "9vcv21",
@@ -73,7 +73,7 @@ export default {
           userIcon: "axe",
           userColor: "blue",
           text: "Consequeteur?",
-          category: "comment"
+          category: "comment",
         },
         {
           id: "asd",
@@ -81,7 +81,7 @@ export default {
           userIcon: "axe",
           userColor: "blue",
           text: "Lorem lorem :D",
-          category: "comment"
+          category: "comment",
         },
         {
           id: "cva",
@@ -90,7 +90,7 @@ export default {
           userColor: "green",
           text:
             "Elipsum est lorem ipsum, lorem ipsum dolor sit amet consequeteur est lorem ipsum, lorem ipsum dolor sit amet",
-          category: "comment"
+          category: "comment",
         },
         {
           id: "asd2w",
@@ -99,16 +99,16 @@ export default {
           userColor: "yellow",
           text:
             "Ipsum dolor sit ... consequeteur elipsum est lorem ipsum, lorem ipsum dolor sit amet",
-          category: "comment"
-        }
-      ]
+          category: "comment",
+        },
+      ],
     };
   },
   computed: {
-    ...mapGetters(["getTheme"])
+    ...mapGetters(["getTheme"]),
   },
   methods: {
-    ...mapActions(["toggleTheme"])
-  }
+    ...mapActions(["toggleTheme"]),
+  },
 };
 </script>

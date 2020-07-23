@@ -1,6 +1,24 @@
 <template>
   <div class="flex px-2 lg:mt-2">
     <div class="relative flex-grow w-full">
+      <div class="absolute inset-y-0 left-0 items-center hidden lg:flex">
+        <transition
+          enter-class="opacity-0"
+          enter-active-class="transition-opacity duration-150"
+          enter-to-class="opacity-100"
+          leave-class="opacity-100"
+          leave-active-class="transition-opacity duration-150 delay-200"
+          leave-to-class="opacity-0"
+        >
+          <AppButton
+            :color="isSettingsOpen ? 'basic' : 'accent-2'"
+            size="sm"
+            class="ml-1"
+            icon="fa-keyboard"
+            @click="toggleSettings"
+          />
+        </transition>
+      </div>
       <AppInputField
         centered
         type="text"
@@ -23,7 +41,7 @@
             icon="fa-times"
             color="accent-2"
             size="sm"
-            class="mr-2"
+            class="mr-1"
             v-if="textInput"
             @click="textInput = ''"
           />
@@ -35,7 +53,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import AppButton from "@/components/ui/AppButton";
 import RollButton from "@/components/roll/RollButton";
 import AppInputField from "@/components/ui/AppInputField";
@@ -44,13 +62,18 @@ export default {
   components: {
     AppButton,
     AppInputField,
-    RollButton
+    RollButton,
   },
   data() {
     return {
-      textInput: ""
+      textInput: "",
     };
   },
-  computed: {}
+  computed: {
+    ...mapGetters(["isSettingsOpen"]),
+  },
+  methods: {
+    ...mapActions(["toggleSettings"]),
+  },
 };
 </script>

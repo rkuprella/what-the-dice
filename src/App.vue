@@ -11,14 +11,14 @@
     <div class="relative flex flex-grow overflow-hidden">
       <transition
         enter-class="-translate-y-full lg:-translate-x-full lg:translate-y-0"
-        enter-active-class="transition-transform duration-100 ease-out delay-100 transform"
+        enter-active-class="transition-transform duration-100 ease-out transform"
         enter-to-class="translate-y-0 lg:translate-x-0"
         leave-class="translate-y-0 lg:translate-x-0"
-        leave-active-class="transition-transform duration-100 ease-in delay-100 transform"
+        leave-active-class="transition-transform duration-100 ease-in transform"
         leave-to-class="-translate-y-full lg:-translate-x-full lg:translate-y-0"
       >
         <div
-          class="absolute inset-x-0 top-0 z-20 lg:static lg:w-18"
+          class="absolute inset-x-0 top-0 z-20 flex-shrink-0 lg:static lg:w-18"
           v-show="isMenuOpen || isSideBarOnTopActive"
         >
           <TheSideBar />
@@ -26,7 +26,6 @@
       </transition>
 
       <!-- main area -->
-
       <div
         class="flex flex-col flex-grow pb-2 lg:pb-4"
         :class="isSideBarOnTopActive ? 'pt-18 lg:pt-2' : 'pt-2'"
@@ -66,7 +65,6 @@
           v-show="isMenuOpen"
         >
           <TheChat />
-          <!-- test -->
         </div>
       </transition>
     </div>
@@ -92,16 +90,16 @@ export default {
     RollDicePicker,
     RollMenu,
     TheChat,
-    TheSideBar
+    TheSideBar,
   },
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(["isMenuOpen", "getTheme", "isSideBarOnTopActive"])
+    ...mapGetters(["isMenuOpen", "getTheme", "isSideBarOnTopActive"]),
   },
   methods: {
-    ...mapActions(["closeMenu", "toggleTheme"])
+    ...mapActions(["closeMenu", "toggleTheme"]),
   },
   created() {
     let theme = "light";
@@ -119,6 +117,6 @@ export default {
       const theme = this.getTheme;
       localStorage.setItem("theme", theme);
     }
-  }
+  },
 };
 </script>

@@ -1,25 +1,57 @@
 <template>
-  <ul class="flex flex-wrap justify-center px-2 pb-4">
-    <li class="relative py-2 m-1" v-for="die in getAvailableDice" :key="die.id">
-      <AppButton :icon="die.icon" size="xl" color="basic" />
-      <!-- label -->
-      <div
-        class="absolute bottom-0 px-2 py-1 -mb-2 text-sm transform -translate-x-1/2 rounded-lg pointer-events-none select-none left-1/2 bg-primary-2 text-label"
-      >{{ die.name }}</div>
-    </li>
-  </ul>
+  <div class="flex items-center justify-between px-2">
+    <RollMacroSlot
+      v-if="isAllOptionsActive"
+      :macros="getRightMacroSlotList"
+      icon="fa-history"
+      size="sm"
+      class="self-end hidden ml-1 lg:block"
+    />
+
+    <ul class="flex flex-wrap justify-center flex-grow px-2 pb-4 lg:pb-0">
+      <DieButton
+        v-for="die in getAvailableDice"
+        :key="die.id"
+        :icon="die.icon"
+        color="basic"
+        class="m-2 lg:m-1"
+        :label="die.name"
+      />
+    </ul>
+    <RollMacroSlot
+      v-if="isAllOptionsActive"
+      right
+      isPressed
+      :macros="getRightMacroSlotList"
+      icon="fa-star"
+      size="sm"
+      class="self-end hidden mr-1 lg:block"
+    />
+  </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import AppButton from "@/components/ui/AppButton";
+import { mapGetters, mapActions } from "vuex";
+import DieButton from "@/components/ui/DieButton";
+import RollMacroSlot from "@/components/roll/RollMacroSlot";
 
 export default {
   components: {
-    AppButton
+    DieButton,
+    RollMacroSlot,
   },
   computed: {
-    ...mapGetters(["getAvailableDice"])
-  }
+    ...mapGetters([
+      "getAvailableDice",
+      "isMenuOpen",
+      "isSettingsOpen",
+      "isAllOptionsActive",
+      "getLeftMacroSlotList",
+      "getRightMacroSlotList",
+    ]),
+  },
+  methods: {
+    ...mapActions(["toggleMenu", "toggleSettings"]),
+  },
 };
 </script>

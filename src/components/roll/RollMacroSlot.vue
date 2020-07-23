@@ -6,6 +6,7 @@
       color="accent-3"
       :icon="icon"
       :isPressed="isPressed"
+      :size="size"
     />
     <ul
       class="absolute bottom-0 flex flex-col mb-16 space-y-2"
@@ -54,25 +55,30 @@ import ClickOutside from "vue-click-outside";
 
 export default {
   components: {
-    AppButton
+    AppButton,
   },
   props: {
     right: {
       type: Boolean,
-      required: false
+      required: false,
     },
     macros: {
       type: Array,
-      required: true
+      required: true,
     },
     icon: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
+    size: {
+      type: String,
+      required: false,
+      default: "md",
+    },
   },
   data() {
     return {
-      isPressed: false
+      isPressed: false,
     };
   },
   methods: {
@@ -81,13 +87,13 @@ export default {
     },
     removePressed() {
       this.isPressed = false;
-    }
+    },
   },
   mounted() {
     this.popupItem = this.$el;
   },
   directives: {
-    ClickOutside
-  }
+    ClickOutside,
+  },
 };
 </script>

@@ -3,7 +3,7 @@
     <input
       :type="type"
       :id="name"
-      class="w-full h-16 text-lg transition-colors duration-150 lg:h-12 rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline bg-primary-2 focus:bg-primary-1"
+      class="w-full h-12 text-lg transition-colors duration-150 rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline bg-primary-2 focus:bg-primary-1"
       :class="centered ? 'text-center px-12' : 'pl-4 pr-12'"
       :placeholder="placeholder"
       :value="value"
@@ -18,40 +18,40 @@ import AppButton from "@/components/ui/AppButton";
 
 export default {
   components: {
-    AppButton
+    AppButton,
   },
   props: {
     value: {
       type: String,
-      required: true
+      required: true,
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
       required: false,
-      default: "text"
+      default: "text",
     },
     label: {
       type: String,
-      required: false
+      required: false,
     },
     placeholder: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     centered: {
       type: Boolean,
-      required: false
-    }
+      required: false,
+    },
   },
   methods: {
     updateValue(value) {
       this.$emit("input", value);
-    }
-  }
+    },
+  },
 };
 </script>

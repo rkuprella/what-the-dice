@@ -1,13 +1,10 @@
 <template>
-  <nav class="flex items-center justify-between h-12 px-2 bg-basic">
-    <div class="flex items-center w-1/3 space-x-2">
-      <AppButton @click="toggleMenu" icon="bars" />
+  <nav class="flex items-center justify-between px-2 border-b-2 h-14 bg-primary-4 border-primary-3">
+    <div class="flex items-center space-x-2">
+      <AppIcon icon="wtd-icon-inverted" class="w-8 h-8 text-basic" />
     </div>
-    <h1 class="flex items-center justify-center w-1/3 opacity-25">
-      <img src="../../assets/images/logo-small.png" alt="What The Dice Logo" width="32" height="32" />
-    </h1>
-    <div class="flex items-center justify-end w-1/3 space-x-2">
-      <AppButton text="Join a room" size="sm" color="success" inverted />
+    <div class="flex items-center justify-end space-x-2">
+      <AppButton text="Join a room" size="sm" color="basic  " inverted @click="toggleMenu" />
       <AppButton icon="fa-cog" size="sm" @click="toggleTheme" />
     </div>
   </nav>
@@ -16,16 +13,18 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
+import AppIcon from "@/components/ui/AppIcon";
 
 export default {
   components: {
-    AppButton
+    AppButton,
+    AppIcon,
   },
   computed: {
-    ...mapGetters(["isMenuOpen"])
+    ...mapGetters(["isMenuOpen"]),
   },
   methods: {
-    ...mapActions(["toggleTheme", "toggleMenu"])
-  }
+    ...mapActions(["toggleTheme", "toggleMenu"]),
+  },
 };
 </script>
