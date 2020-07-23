@@ -10,7 +10,7 @@
     <!-- icon -->
     <div
       class="flex items-center justify-center transition duration-150 transform ease"
-      :class="[ size === 'xl' ? 'w-16 h-16' : 'w-12 h-12', { 'text-primary-3' : inverted }, { 'active:translate-y-2px' : push }, isPressed ? 'translate-y-2px text-accent-2' : 'text-' + color ]"
+      :class="[ size === 'xl' ? 'w-16 h-16' : 'w-12 h-12 lg:w-10 lg:h-10', { 'text-primary-3' : inverted }, { 'active:translate-y-2px' : push }, isPressed ? 'translate-y-2px text-accent-2' : 'text-' + color ]"
       v-if="icon"
     >
       <AppIcon :icon="icon" :class="getIconSize" />
