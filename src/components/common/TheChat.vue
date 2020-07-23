@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col flex-grow py-2 pt-16 lg:pt-0">
-    <div class="flex flex-col flex-grow px-2 my-2 space-y-2 overflow-y-auto">
+  <div class="flex flex-col flex-grow py-2 pt-16 lg:pt-0 bg-primary-3">
+    <div class="flex flex-col flex-grow px-2 mt-3 mb-2 space-y-2 overflow-y-auto lg:mt-0">
       <ChatMessage
         v-for="message in messages"
         :key="message.id"

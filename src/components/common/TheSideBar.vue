@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="getCurrentRoom"
     class="relative w-full border-b-2 lg:overflow-y-auto bg-primary-4 border-primary-3 lg:border-none lg:h-full lg:w-auto"
   >
     <ul
@@ -7,13 +8,29 @@
     >
       <li class="flex items-center space-x-2 lg:flex-col lg:space-y-4 lg:space-x-0 lg:my-3">
         <div class="xl:justify-start xl:w-full xl:flex xl:items-center xl:pl-2">
-          <AppButton size="lg" icon="meeple" color="yellow" />
-          <div class="hidden ml-3 text-lg font-semibold text-yellow xl:block">Temple of Vue</div>
+          <AppButton :icon="getCurrentRoom.icon" :color="getCurrentRoom.color" />
+          <div
+            class="hidden ml-3 text-sm font-semibold xl:flex-col text-yellow xl:flex xl:flex-grow"
+          >
+            <span>{{ getCurrentRoom.name }}</span>
+            <span class="text-xs text-label">Forge</span>
+          </div>
+          <AppButton
+            icon="fa-signout"
+            size="sm"
+            color="label"
+            class="hidden mt-1 transform rotate-180 xl:block"
+            @click="leaveRoom"
+          />
         </div>
         <div class="w-px h-6 bg-accent-1 lg:w-6 lg:h-px xl:w-16"></div>
       </li>
-      <li class="flex items-center justify-center" v-for="n in 6" :key="n">
-        <UserButton icon="axe" label="Axewielder" />
+      <li
+        class="flex items-center justify-center"
+        v-for="user in getCurrentRoom.users"
+        :key="user.id"
+      >
+        <UserButton :icon="user.icon" :label="user.name" />
       </li>
     </ul>
     <transition
@@ -48,10 +65,14 @@ export default {
     UserButton,
   },
   computed: {
-    ...mapGetters(["isMenuOpen", "isSideBarOnTopActive"]),
+    ...mapGetters(["isMenuOpen", "isSideBarOnTopActive", "getCurrentRoom"]),
   },
   methods: {
     ...mapActions(["toggleTheme", "toggleSideBarOnTop"]),
+    leaveRoom() {
+      const payload = null;
+      this.$store.dispatch("setCurrentRoom", payload);
+    },
   },
 };
 </script>

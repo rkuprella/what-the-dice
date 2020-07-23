@@ -20,7 +20,7 @@
     <!-- label -->
     <div
       v-if="label"
-      class="absolute bottom-0 px-3 py-1 -mb-4 text-sm truncate transform -translate-x-1/2 rounded-lg pointer-events-none select-none lg:px-1 lg:w-16 lg:translate-x-0 lg:static lg:mb-0 left-1/2 bg-primary-2 lg:bg-transparent text-label"
+      class="absolute bottom-0 px-3 py-1 -mb-4 text-sm truncate transform -translate-x-1/2 rounded-lg pointer-events-none select-none lg:px-1 lg:w-12 lg:translate-x-0 lg:static lg:mb-0 left-1/2 bg-primary-2 lg:bg-transparent text-label"
     >{{ label }}</div>
   </button>
 </template>

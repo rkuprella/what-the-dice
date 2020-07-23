@@ -1,8 +1,8 @@
 <template>
   <div class="relative flex items-center justify-center flex-grow overflow-y-auto">
-    <AppTransition scale>
-      <ThemeSwitcher v-if="!isSettingsOpen" />
-    </AppTransition>
+    <!-- <AppTransition scale> -->
+    <ThemeSwitcher v-if="!isSettingsOpen" />
+    <!-- </AppTransition> -->
     <AppTransition scale>
       <RollDiceTable v-if="isSettingsOpen" />
     </AppTransition>
@@ -19,10 +19,10 @@ export default {
   components: {
     ThemeSwitcher,
     AppTransition,
-    RollDiceTable
+    RollDiceTable,
   },
   computed: {
-    ...mapGetters(["isSettingsOpen"])
-  }
+    ...mapGetters(["isSettingsOpen"]),
+  },
 };
 </script>

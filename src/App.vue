@@ -9,16 +9,18 @@
     </div>
     <!-- wrapper -->
     <div class="relative flex flex-grow overflow-hidden">
+      <!-- roll history -->
+      <HistoryBar class="hidden lg:flex" v-if="isAllOptionsActive" />
+
       <!-- main area -->
       <div
         class="flex flex-col flex-grow pb-2 lg:pb-4"
-        :class="[isSideBarOnTopActive ? 'pt-18 lg:pt-2' : 'pt-2', isMenuOpen ? 'lg:w-2/3' : 'lg:max-w-6xl lg:mx-auto']"
+        :class="[isSideBarOnTopActive ? 'pt-20 lg:pt-2' : 'pt-2 lg:pt-0', isMenuOpen ? 'lg:w-2/3' : 'lg:max-w-6xl lg:mx-auto']"
       >
-        <div class="flex flex-grow overflow-hidden">
+        <RollScrollArea />
+        <!-- <div class="flex flex-grow overflow-hidden">
           <RollDiceSetBar class="hidden lg:flex" v-if="isAllOptionsActive" />
-          <RollScrollArea />
-          <RollDiceSetBar class="hidden lg:flex" v-if="isAllOptionsActive" />
-        </div>
+        </div>-->
         <RollDicePicker />
         <RollDiceCode class="order-first lg:order-none" />
         <RollMenu class="lg:hidden" />
@@ -49,10 +51,11 @@
         leave-to-class="-translate-x-full lg:translate-x-0"
       >
         <div
-          class="absolute inset-0 flex flex-grow h-full mr-16 bg-primary-3 sm:mr-auto sm:w-92 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
+          class="absolute inset-0 flex flex-grow h-full mr-16 sm:mr-auto sm:w-84 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
           v-show="isMenuOpen"
         >
-          <TheChat />
+          <TheChat v-if="getCurrentRoom" />
+          <TheMenu v-else />
         </div>
       </transition>
 
@@ -66,7 +69,7 @@
       >
         <div
           class="absolute inset-x-0 top-0 z-20 flex-shrink-0 lg:static lg:w-18 xl:w-64"
-          v-show="isMenuOpen || isSideBarOnTopActive"
+          v-show="(isMenuOpen || isSideBarOnTopActive) && getCurrentRoom"
         >
           <TheSideBar />
         </div>
@@ -78,6 +81,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import TheNavBar from "@/components/common/TheNavBar";
+import TheMenu from "@/components/common/TheMenu";
 import RollDiceCode from "@/components/roll/RollDiceCode";
 import RollScrollArea from "@/components/roll/RollScrollArea";
 import RollDicePicker from "@/components/roll/RollDicePicker";
@@ -85,11 +89,13 @@ import RollMenu from "@/components/roll/RollMenu";
 import TheChat from "@/components/common/TheChat";
 import TheSideBar from "@/components/common/TheSideBar";
 import RollDiceSetBar from "@/components/roll/RollDiceSetBar";
+import HistoryBar from "@/components/common/HistoryBar";
 
 export default {
   name: "App",
   components: {
     TheNavBar,
+    TheMenu,
     RollDiceCode,
     RollScrollArea,
     RollDicePicker,
@@ -97,6 +103,7 @@ export default {
     TheChat,
     TheSideBar,
     RollDiceSetBar,
+    HistoryBar,
   },
   data() {
     return {};
@@ -107,6 +114,7 @@ export default {
       "getTheme",
       "isSideBarOnTopActive",
       "isAllOptionsActive",
+      "getCurrentRoom",
     ]),
   },
   methods: {

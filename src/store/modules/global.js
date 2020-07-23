@@ -5,6 +5,7 @@ const state = {
     soundOn: true,
     showSettings: false,
     showSideBarOnTop: false,
+    currentRoom: null,
     leftMacroSlotList: [
 
     ],
@@ -50,6 +51,7 @@ const state = {
 
 const getters = {
     getTheme: state => state.theme,
+    getCurrentRoom: state => state.currentRoom,
     isMenuOpen: state => state.showMenu,
     isAllOptionsActive: state => state.allOptions,
     isSettingsOpen: state => state.showSettings,
@@ -79,6 +81,9 @@ const mutations = {
     TOGGLE_SIDEBARONTOP: (state) => {
         state.showSideBarOnTop = !state.showSideBarOnTop;
     },
+    SET_CURRENT_ROOM: (state, payload) => {
+        state.currentRoom = payload
+    },
 }
 
 const actions = {
@@ -99,6 +104,9 @@ const actions = {
     },
     toggleSideBarOnTop({ commit }) {
         commit('TOGGLE_SIDEBARONTOP')
+    },
+    setCurrentRoom({ commit }, payload) {
+        commit('SET_CURRENT_ROOM', payload)
     }
 }
 

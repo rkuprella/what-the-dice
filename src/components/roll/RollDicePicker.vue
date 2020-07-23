@@ -1,6 +1,8 @@
 <template>
-  <div class="flex px-2">
-    <ul class="flex flex-wrap justify-around flex-grow pb-4 lg:justify-center lg:pb-0">
+  <div class="flex flex-shrink-0 px-2 overflow-x-auto lg:overflow-x-hidden">
+    <ul
+      class="flex flex-wrap justify-around flex-grow flex-shrink-0 pb-4 lg:flex-shrink lg:justify-center lg:pb-0"
+    >
       <li class="m-2 lg:m-1" v-for="die in getAvailableDice" :key="die.id">
         <DieButton :icon="die.icon" color="basic" :label="die.name" />
       </li>
