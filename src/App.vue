@@ -1,7 +1,8 @@
 <template>
   <div
     id="app"
-    class="flex flex-col h-screen overflow-hidden antialiased bg-primary-3"
+    class="flex flex-col h-full overflow-hidden antialiased bg-primary-3"
+    style="min-height: -webkit-fill-available;"
     :data-theme="getTheme"
   >
     <div class="hidden lg:block">
