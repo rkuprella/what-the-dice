@@ -1,9 +1,7 @@
 # What The Dice
 **In development:** https://whatthedice.netlify.app/
 
-* A dice roller with chat rooms and initiative tracker
-* Web app (PWA) with offline functionality
-* Further development of my older dice rolling app https://wuerfel.app/
+A dice roller with chat rooms and initiative tracker with enhanced UX. Based on my older dice rolling app: https://wuerfel.app/
 
 ## Built with
 * Vue 2
@@ -11,11 +9,12 @@
 * Express
 * Socket.io
 
-## Milestones
+## Development progress
 
 - [x] Setting up the store (vuex)
 - [x] Building a basic user interface
 - [x] App theme changer (dark, light, maybe more)
+- [x] Favicon support (thx @ Realfavicongenerator.net)
 - [ ] Basic dice roll functionality
 - [ ] Translating dice code with RegEx into an array of visual dice
 - [ ] Rulesets (D&D5e, WH40k, etc) to choose from with different predefined dice and options (e.g. advantage for D&D5e)

@@ -3,7 +3,7 @@
     class="relative w-full border-b-2 lg:overflow-y-auto bg-primary-4 border-primary-3 lg:border-none lg:h-full lg:w-auto"
   >
     <ul
-      class="flex flex-grow px-2 py-2 space-x-1 overflow-x-auto lg:flex-col lg:space-y-1 lg:space-x-0 lg:overflow-x-visible"
+      class="flex flex-grow px-2 py-2 space-x-1 overflow-x-auto lg:flex-col lg:space-y-1 lg:space-x-0"
     >
       <li class="flex items-center space-x-2 lg:flex-col lg:space-y-4 lg:space-x-0 lg:my-3">
         <div class="xl:justify-start xl:w-full xl:flex xl:items-center xl:pl-2">
