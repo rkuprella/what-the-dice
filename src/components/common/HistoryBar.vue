@@ -6,10 +6,10 @@
         v-for="item in getRightMacroSlotList"
         :key="item.id"
       >
-        <AppButton :icon="item.icon" :color="item.color" />
+        <AppButton :icon="item.icon" :color="item.color" class="w-14" />
       </li>
-      <li class="flex items-center justify-center" key="addSet">
-        <AppButton icon="fa-plus" color="accent-1" />
+      <li class="flex items-center justify-center pt-2">
+        <AppButton icon="fa-cog" size="sm" color="accent-2" />
       </li>
     </ul>
   </div>

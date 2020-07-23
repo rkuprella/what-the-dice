@@ -15,7 +15,7 @@
       <!-- main area -->
       <div
         class="flex flex-col flex-grow pb-2 lg:pb-4"
-        :class="[isSideBarOnTopActive ? 'pt-20 lg:pt-2' : 'pt-2 lg:pt-0', isMenuOpen ? 'lg:w-2/3' : 'lg:max-w-6xl lg:mx-auto']"
+        :class="[isSideBarOnTopActive && getCurrentRoom ? 'pt-20 lg:pt-0' : 'pt-2 lg:pt-0', isMenuOpen ? 'lg:w-2/3' : 'lg:max-w-6xl lg:mx-auto']"
       >
         <RollScrollArea />
         <!-- <div class="flex flex-grow overflow-hidden">
@@ -69,7 +69,7 @@
       >
         <div
           class="absolute inset-x-0 top-0 z-20 flex-shrink-0 lg:static lg:w-18 xl:w-64"
-          v-show="(isMenuOpen || isSideBarOnTopActive) && getCurrentRoom"
+          v-if="(isMenuOpen || isSideBarOnTopActive) && getCurrentRoom"
         >
           <TheSideBar />
         </div>
