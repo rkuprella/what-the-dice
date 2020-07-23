@@ -5,6 +5,7 @@
     style="min-height: -webkit-fill-available;"
     :data-theme="getTheme"
   >
+    <a class="sr-only" href="#main">Skip to main</a>
     <div class="hidden lg:block">
       <TheNavBar />
     </div>
@@ -15,6 +16,7 @@
 
       <!-- main area -->
       <div
+        id="main"
         class="flex flex-col flex-grow pb-2 lg:pb-4"
         :class="[isSideBarOnTopActive && getCurrentRoom ? 'pt-20 lg:pt-0' : 'pt-2 lg:pt-0', isMenuOpen ? 'lg:w-2/3' : 'lg:max-w-6xl lg:mx-auto']"
       >
