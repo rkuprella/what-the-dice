@@ -2,7 +2,7 @@
   <button
     :type="type"
     aria-label="Button"
-    class="flex flex-col items-center justify-center overflow-hidden transition duration-150 transform select-none focus:outline-none ease lg:focus:shadow-outline"
+    class="relative flex flex-col items-center justify-center transition duration-150 transform select-none focus:outline-none ease lg:focus:shadow-outline"
     :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }, { 'active:scale-75 hover:scale-110' : squeeze }]"
     v-on="$listeners"
     v-bind="$attrs"
@@ -22,6 +22,11 @@
       class="px-3 py-1 font-bold"
       :class="['text-' + size, inverted ? 'text-primary-3' : 'text-label']"
     >{{ getText }}</span>
+
+    <!-- badge -->
+    <div v-if="badge" class="absolute bottom-0 right-0 -mb-1 -mr-1 select-none text-accent-2">
+      <AppIcon :icon="badge" class="w-5 h-5 p-1 rounded-full bg-primary-3" />
+    </div>
   </button>
 </template>
 
@@ -78,6 +83,11 @@ export default {
     // Inverts colors
     inverted: {
       type: Boolean,
+      required: false,
+    },
+    // adds a badge
+    badge: {
+      type: String,
       required: false,
     },
   },

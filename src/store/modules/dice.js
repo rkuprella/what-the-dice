@@ -1,4 +1,5 @@
 const state = {
+    currentDice: [],
     availableDice: [
         {
             id: 1,
@@ -91,14 +92,33 @@ const state = {
 
 const getters = {
     getAvailableDice: state => state.availableDice,
+    getCurrentDice: state => state.currentDice,
+    getDieByName(state) {
+        return (name) => {
+            return state.availableDice.find((item) => {
+                return item.name === name
+            })
+        }
+    } 
 }
 
 const mutations = {
-
+    SET_CURRENT_DICE: (state, payload) => {
+        state.currentDice = payload
+    },
 }
 
 const actions = {
-
+    setCurrentDice({ commit }, payload) {
+        commit('SET_CURRENT_DICE', payload)
+    },
+    setCurrentDiceFromRuleset({ commit, getters }, dice) {
+        let payload = []
+        dice.forEach(die => {
+            payload.push(getters.getDieByName(die))
+        })
+        commit('SET_CURRENT_DICE', payload)
+    }
 }
 
 export default {

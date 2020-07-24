@@ -6,6 +6,8 @@ const state = {
     showSettings: false,
     showSideBarOnTop: false,
     currentRoom: null,
+    
+
     leftMacroSlotList: [
 
     ],
@@ -58,7 +60,8 @@ const getters = {
     isSoundOn: state => state.soundOn,
     isSideBarOnTopActive: state => state.showSideBarOnTop,
     getLeftMacroSlotList: state => state.leftMacroSlotList,
-    getRightMacroSlotList: state => state.rightMacroSlotList
+    getRightMacroSlotList: state => state.rightMacroSlotList,
+    
 }
 
 const mutations = {
@@ -87,6 +90,7 @@ const mutations = {
     SET_CURRENT_ROOM: (state, payload) => {
         state.currentRoom = payload
     },
+    
 }
 
 const actions = {
@@ -113,7 +117,8 @@ const actions = {
     },
     setCurrentRoom({ commit }, payload) {
         commit('SET_CURRENT_ROOM', payload)
-    }
+    },
+    
 }
 
 export default {

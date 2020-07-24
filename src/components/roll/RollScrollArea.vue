@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex items-center justify-center flex-grow overflow-y-scroll">
     <!-- <AppTransition scale> -->
-    <ThemeSwitcher v-if="!isSettingsOpen" />
+    <DiceBagSwitcher v-if="!isSettingsOpen" />
     <!-- </AppTransition> -->
     <AppTransition scale>
       <RollDiceTable v-if="isSettingsOpen" />
@@ -11,13 +11,13 @@
 
 <script>
 import { mapGetters } from "vuex";
-import ThemeSwitcher from "@/components/common/ThemeSwitcher";
+import DiceBagSwitcher from "@/components/common/DiceBagSwitcher";
 import RollDiceTable from "@/components/roll/RollDiceTable";
 import AppTransition from "@/components/ui/AppTransition";
 
 export default {
   components: {
-    ThemeSwitcher,
+    DiceBagSwitcher,
     AppTransition,
     RollDiceTable,
   },

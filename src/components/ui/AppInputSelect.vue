@@ -35,22 +35,26 @@ import ClickOutside from "vue-click-outside";
 
 export default {
   components: {
-    AppIcon
+    AppIcon,
   },
   props: {
     options: {
       type: Array,
-      required: true
+      required: true,
     },
     top: {
       type: Boolean,
-      required: false
-    }
+      required: false,
+    },
+    value: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
-      selected: this.options.length > 0 ? this.options[0] : null,
-      isOpen: false
+      selected: this.value,
+      isOpen: false,
     };
   },
   methods: {
@@ -59,14 +63,14 @@ export default {
     },
     closeOptions() {
       this.isOpen = false;
-    }
+    },
   },
   mounted() {
     this.$emit("input", this.selected);
     this.popupItem = this.$el;
   },
   directives: {
-    ClickOutside
-  }
+    ClickOutside,
+  },
 };
 </script>
