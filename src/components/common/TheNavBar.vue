@@ -3,7 +3,6 @@
     <div class="flex items-center">
       <a href="#" title="What the Dice Documentation" class="flex items-center px-2 space-x-2">
         <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
-        <span class="text-label">Documentation</span>
       </a>
     </div>
     <div class="flex items-center justify-end px-2">

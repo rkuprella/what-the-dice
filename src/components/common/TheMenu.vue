@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col flex-grow py-2 pt-2 lg:pt-0 bg-primary-3">
     <div class="flex items-center px-2 lg:hidden">
-      <a href="#" title="What the Dice Documentation" class="flex items-center px-2 space-x-2">
+      <a href="#" title="What the Dice Documentation" class="flex items-center px-2 py-1 space-x-2">
         <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
         <span class="text-label">Documentation</span>
       </a>
