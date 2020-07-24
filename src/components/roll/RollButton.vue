@@ -8,9 +8,9 @@ import soundMixin from "@/mixins/soundMixin";
 
 export default {
   components: {
-    AppButton
+    AppButton,
   },
-  mixins: [soundMixin]
+  mixins: [soundMixin],
 };
 </script>
 

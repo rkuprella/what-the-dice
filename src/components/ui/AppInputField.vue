@@ -1,24 +1,35 @@
 <template>
-  <label :for="name" :aria-label="placeholder">
+  <div class="relative space-y-1">
+    <label :for="name" :aria-label="placeholder" class="text-sm text-label">
+      <span v-if="label">{{ label }}</span>
+    </label>
     <input
       :type="type"
       :id="name"
       class="w-full h-12 text-lg transition-colors duration-150 rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline bg-primary-2 focus:bg-primary-1"
-      :class="centered ? 'text-center px-12' : 'pl-4 pr-12'"
+      :class="centered && !icon ? 'text-center pl-12 pr-12' : icon ? 'pl-12 pr-4' : 'pl-4 pr-12'"
       :placeholder="placeholder"
       :value="value"
       autocomplete="off"
       @input="updateValue($event.target.value)"
     />
-  </label>
+    <div
+      class="absolute inset-y-0 left-0 flex items-center pointer-events-none text-accent-1"
+      v-if="icon"
+    >
+      <AppIcon :icon="icon" class="w-6 h-6 ml-3" />
+    </div>
+  </div>
 </template>
 
 <script>
 import AppButton from "@/components/ui/AppButton";
+import AppIcon from "@/components/ui/AppIcon";
 
 export default {
   components: {
     AppButton,
+    AppIcon,
   },
   props: {
     value: {
@@ -45,6 +56,10 @@ export default {
     },
     centered: {
       type: Boolean,
+      required: false,
+    },
+    icon: {
+      type: String,
       required: false,
     },
   },

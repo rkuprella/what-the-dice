@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center justify-center flex-grow overflow-y-auto">
+  <div class="relative flex items-center justify-center flex-grow overflow-y-scroll">
     <!-- <AppTransition scale> -->
     <ThemeSwitcher v-if="!isSettingsOpen" />
     <!-- </AppTransition> -->

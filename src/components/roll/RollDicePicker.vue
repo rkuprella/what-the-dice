@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-shrink-0 px-2 overflow-x-auto lg:overflow-x-hidden">
+  <div class="flex flex-shrink-0 px-2 overflow-x-scroll lg:overflow-x-hidden">
     <ul
       class="flex flex-wrap justify-around flex-grow flex-shrink-0 pb-4 lg:flex-shrink lg:justify-center lg:pb-0"
     >

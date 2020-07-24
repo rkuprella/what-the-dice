@@ -1,6 +1,14 @@
 <template>
   <div class="flex flex-shrink-0 px-2 lg:mt-2">
     <div class="relative flex-grow w-full">
+      <AppInputField
+        centered
+        type="text"
+        name="diceCode"
+        button="fa-times"
+        placeholder="Enter Dice Code"
+        v-model="textInput"
+      />
       <div class="absolute inset-y-0 left-0 flex items-center">
         <transition
           enter-class="opacity-0"
@@ -19,14 +27,6 @@
           />
         </transition>
       </div>
-      <AppInputField
-        centered
-        type="text"
-        name="diceCode"
-        button="fa-times"
-        placeholder="Enter Dice Code"
-        v-model="textInput"
-      />
       <div class="absolute inset-y-0 right-0 flex items-center">
         <transition
           enter-class="opacity-0"

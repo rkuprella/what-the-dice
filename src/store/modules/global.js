@@ -78,6 +78,9 @@ const mutations = {
     TOGGLE_SETTINGS: (state) => {
         state.showSettings = !state.showSettings;
     },
+    CLOSE_SETTINGS: (state) => {
+        state.showSettings = false;
+    },
     TOGGLE_SIDEBARONTOP: (state) => {
         state.showSideBarOnTop = !state.showSideBarOnTop;
     },
@@ -101,6 +104,9 @@ const actions = {
     },
     toggleSettings({ commit }) {
         commit('TOGGLE_SETTINGS')
+    },
+    closeSettings({ commit }) {
+        commit('CLOSE_SETTINGS')
     },
     toggleSideBarOnTop({ commit }) {
         commit('TOGGLE_SIDEBARONTOP')

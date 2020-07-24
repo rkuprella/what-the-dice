@@ -1,9 +1,9 @@
 <template>
   <div
-    class="relative w-full border-b-2 lg:flex lg:flex-col lg:items-center lg:justify-between lg:overflow-y-auto bg-primary-4 border-primary-3 lg:border-none lg:h-full lg:w-auto"
+    class="relative w-full border-b-2 lg:flex lg:flex-col lg:items-center lg:justify-between lg:overflow-y-scroll bg-primary-4 border-primary-3 lg:border-none lg:h-full lg:w-auto"
   >
     <ul
-      class="flex flex-grow px-2 py-2 space-x-1 overflow-x-auto lg:w-full lg:flex-col lg:space-y-1 lg:space-x-0"
+      class="flex flex-grow px-2 py-2 space-x-1 overflow-x-scroll lg:w-full lg:flex-col lg:space-y-1 lg:space-x-0"
     >
       <!-- room -->
       <li class="flex items-center space-x-2 lg:flex-col lg:space-y-4 lg:space-x-0 lg:my-3">

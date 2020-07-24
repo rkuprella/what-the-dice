@@ -7,18 +7,25 @@
       </a>
     </div>
     <div
-      class="flex flex-col items-center justify-center flex-grow px-2 mt-3 mb-2 space-y-4 overflow-y-auto lg:mt-0"
+      class="flex flex-col items-center justify-center flex-grow px-2 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
     >
       <p
         class="px-4 font-semibold text-center sm:px-16 text-highlight"
       >Join an online room and roll with your friends</p>
-      <AppButton
-        icon="fa-dungeon"
-        color="primary-3"
-        class="px-4 py-2 bg-highlight"
-        size="lg"
-        @click="joinRoom"
-      />
+      <div class="flex space-x-2">
+        <div class="flex flex-col">
+          <AppInputField v-model="userName" name="userName" placeholder="Your name" icon="meeple" />
+          <AppInputField v-model="roomName" name="roomName" placeholder="Room" icon="fa-dungeon" />
+        </div>
+        <AppButton
+          icon="fa-dungeon"
+          :color="!userName || !roomName ? 'accent-1' : 'highlight'"
+          class="px-4 py-2"
+          :disabled="!userName || !roomName"
+          size="lg"
+          @click="joinRoom"
+        />
+      </div>
     </div>
     <div class="flex justify-start px-2 lg:hidden">
       <AppButton icon="fas-moon" size="sm" @click="toggleTheme" />
@@ -43,6 +50,9 @@ export default {
   data() {
     return {
       text: "",
+      userName: "",
+      roomName: "",
+      roomPassword: "",
       messages: [
         {
           id: "921",
@@ -98,6 +108,14 @@ export default {
   },
   computed: {
     ...mapGetters(["getTheme"]),
+    moreOptions: {
+      set() {
+        this.$store.dispatch("toggleAllOptions");
+      },
+      get() {
+        return this.$store.getters.isAllOptionsActive;
+      },
+    },
   },
   methods: {
     ...mapActions(["toggleTheme"]),
