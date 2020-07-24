@@ -13,6 +13,17 @@
       </div>
       <div class="flex-grow pl-2 pr-32 overflow-y-scroll">
         <AppCheckBox text="Give me all the options" id="options" v-model="options" />
+        <div>
+          <li v-for="language in languages" :key="language.id">
+            <button
+              :flag="language.flag"
+              :class="$i18n.locale === language.language ? 'bg-primary-800 shadow-lg' : 'grayscale-50 opacity-50'"
+              @click="changeLocale(language.language)"
+            >
+              <flag :iso="language.flag" />
+            </button>
+          </li>
+        </div>
       </div>
     </div>
   </div>
@@ -22,11 +33,20 @@
 import { mapActions } from "vuex";
 import AppButton from "@/components/ui/AppButton";
 import AppCheckBox from "@/components/ui/AppCheckBox";
+import i18n from "@/plugins/i18n";
 
 export default {
   components: {
     AppButton,
     AppCheckBox,
+  },
+  data() {
+    return {
+      languages: [
+        { id: 1, flag: "us", language: "en", name: "English" },
+        { id: 2, flag: "de", language: "de", name: "Deutsch" },
+      ],
+    };
   },
   computed: {
     options: {
@@ -44,6 +64,10 @@ export default {
       if (e.key === "Escape") {
         this.closeSettings();
       }
+    },
+    changeLocale(language) {
+      i18n.locale = language;
+      localStorage.setItem("language", language);
     },
   },
   created() {

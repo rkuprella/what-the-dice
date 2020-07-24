@@ -15,9 +15,9 @@
       <li class="m-2 lg:m-1" v-for="die in getCurrentDice" :key="die.id">
         <DieButton :icon="die.icon" color="basic" :label="die.name" />
       </li>
-      <li class="flex items-center justify-center m-2 lg:m-1" key="add-die">
-        <AppButton icon="fa-plus" color="accent-2" class="w-full h-full px-2" />
-      </li>
+      <!-- <li class="flex items-center justify-center m-2 lg:m-1" key="add-die">
+        <AppButton icon="fa-plus" color="accent-2" class="w-full h-full" />
+      </li>-->
     </transition-group>
   </div>
 </template>

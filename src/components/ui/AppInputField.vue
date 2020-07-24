@@ -1,12 +1,12 @@
 <template>
-  <div class="relative space-y-1">
-    <label :for="name" :aria-label="placeholder" class="text-sm text-label">
+  <div class="relative">
+    <label :for="name" :aria-label="placeholder" class="mb-1 text-sm text-label">
       <span v-if="label">{{ label }}</span>
     </label>
     <input
       :type="type"
       :id="name"
-      class="w-full h-12 text-lg transition-colors duration-150 rounded-xl focus:outline-none text-highlight placeholder-label focus:shadow-outline bg-primary-2 focus:bg-primary-1"
+      class="w-full h-12 text-lg transition-colors duration-150 rounded-xl focus:outline-none text-highlight placeholder-accent-2 focus:shadow-outline bg-primary-2 focus:bg-primary-1"
       :class="centered && !icon ? 'text-center pl-12 pr-12' : icon ? 'pl-12 pr-4' : 'pl-4 pr-12'"
       :placeholder="placeholder"
       :value="value"

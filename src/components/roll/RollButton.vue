@@ -1,5 +1,11 @@
 <template>
-  <AppButton text="Roll" wide size="xl" inverted @click="[null, playSound('shake-and-roll')]" />
+  <AppButton
+    :text="$t('rollTheDice')"
+    wide
+    size="xl"
+    inverted
+    @click="playSound('shake-and-roll')"
+  />
 </template>
 
 <script>

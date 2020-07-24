@@ -1,22 +1,13 @@
 <template>
-  <nav class="flex items-center justify-between px-2 h-14 bg-primary-4">
+  <nav class="flex items-center justify-between h-16 px-2 bg-primary-4">
     <div class="flex items-center">
       <a href="#" title="What the Dice Documentation" class="flex items-center px-2 space-x-2">
         <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
         <span class="text-label">Documentation</span>
       </a>
     </div>
-    <div class="flex items-center justify-end px-2 space-x-2">
+    <div class="flex items-center justify-end px-2">
       <AppButton
-        text="Join a room"
-        size="sm"
-        color="basic"
-        inverted
-        @click="toggleMenu"
-        v-if="!getCurrentRoom"
-      />
-      <AppButton
-        v-else
         color="accent-2"
         size="sm"
         @click="toggleMenu"

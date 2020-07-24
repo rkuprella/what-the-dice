@@ -26,6 +26,7 @@
 import { mapGetters, mapActions } from "vuex";
 import TheSettingsWrapper from "@/components/common/TheSettingsWrapper";
 import TheRollWrapper from "@/components/roll/TheRollWrapper";
+import i18n from "@/plugins/i18n";
 
 export default {
   name: "App",
@@ -43,6 +44,7 @@ export default {
     ...mapActions(["toggleTheme"]),
   },
   created() {
+    // setup dark mode from local storage or prefered color scheme
     let theme = "light";
     if (localStorage.getItem("theme")) {
       if (localStorage.getItem("theme") === "dark") {
@@ -57,6 +59,12 @@ export default {
       this.toggleTheme();
       const theme = this.getTheme;
       localStorage.setItem("theme", theme);
+    }
+
+    // setup language from local storage
+    if (localStorage.getItem("language")) {
+      const language = localStorage.getItem("language");
+      i18n.locale = language;
     }
   },
 };

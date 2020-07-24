@@ -6,7 +6,7 @@
         type="text"
         name="diceCode"
         button="fa-times"
-        placeholder="Enter Dice Code"
+        :placeholder="$t('enterDiceCode')"
         v-model="textInput"
       />
       <div class="absolute inset-y-0 left-0 flex items-center">

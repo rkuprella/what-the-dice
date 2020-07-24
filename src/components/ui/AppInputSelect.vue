@@ -14,17 +14,19 @@
       :class="{ '-rotate-180' : isOpen }"
     />
     <div
-      class="absolute w-full space-y-1 overflow-hidden transform -translate-x-1/2 left-1/2"
+      class="absolute w-full space-y-1 transform -translate-x-1/2 left-1/2"
       :class="[{'hidden' : !isOpen}, top ? 'bottom-0 mb-14' : 'mt-2']"
     >
-      <div
-        class="px-4 py-3 rounded-lg cursor-pointer text-label hover:text-accent-3 bg-primary-2 focus:outline-none focus:text-accent-3 active:text-accent-3"
+      <button
+        class="w-full px-4 py-3 text-left rounded-lg cursor-pointer bg-primary-2 focus:outline-none"
+        :class="selected === option ? 'text-highlight active:text-primary-2 focus:text-primary-2' : 'text-label focus:text-accent-3 active:text-accent-3 hover:text-accent-3 focus:shadow-outline'"
         v-for="option in options"
+        :disabled="selected === option"
         :key="option"
         tabindex="0"
         @click="[selected = option, closeOptions(), $emit('input', option)]"
         @keypress.space.enter="[selected = option, closeOptions(), $emit('input', option)]"
-      >{{ option }}</div>
+      >{{ option }}</button>
     </div>
   </div>
 </template>

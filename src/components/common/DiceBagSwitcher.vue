@@ -6,7 +6,7 @@
         enter-active-class="transition duration-150 transform ease-bounce"
         enter-to-class="scale-100 opacity-100"
         leave-class="scale-100 opacity-100"
-        leave-active-class="transition duration-300 transform ease"
+        leave-active-class="transition duration-150 transform ease"
         leave-to-class="scale-150 opacity-0"
         mode="out-in"
       >
@@ -20,7 +20,7 @@
         <AppInputSelect v-model="selected" :options="getNamesOfRulesets" />
         <AppButton icon="dice-cup" color="accent-2" badge="fas-plus" />
       </div>
-      <small class="mt-3 text-label">Switch dice bag or make your own</small>
+      <small class="mt-3 text-label">{{ $t('switchDiceBags')}}</small>
     </div>
   </div>
 </template>

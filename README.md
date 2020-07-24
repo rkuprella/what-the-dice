@@ -17,7 +17,7 @@ A dice roller with chat rooms and initiative tracker with enhanced UX. Based on 
 - [x] Favicon support (thx @ Realfavicongenerator.net)
 - [ ] Basic dice roll functionality
 - [ ] Translating dice code with RegEx into an array of visual dice
-- [ ] Rulesets (D&D5e, WH40k, etc) to choose from with different predefined dice and options (e.g. advantage for D&D5e)
+- [x] Rulesets (D&D5e, WH40k, etc) to choose from with different predefined dice and options (e.g. advantage for D&D5e)
 - [ ] Custom transition component
 - [x] Custom sound effects
 - [ ] Custom dice builder
@@ -41,7 +41,7 @@ A dice roller with chat rooms and initiative tracker with enhanced UX. Based on 
 - [ ] Rooms: characters list on top
 - [ ] Left-handed mode: an option to switch ui elements from right to left
 - [x] Sound on/off
-- [ ] Language i18n
+- [x] Language i18n
 - [ ] Finishing the core app
 
 ## Future ideas

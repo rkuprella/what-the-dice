@@ -1,13 +1,13 @@
 <template>
   <div
-    class="relative w-full border-b-2 lg:flex lg:flex-col lg:items-center lg:justify-between lg:overflow-y-scroll bg-primary-4 border-primary-3 lg:border-none lg:h-full lg:w-auto"
+    class="relative w-full border-b-2 lg:flex lg:flex-col lg:items-center lg:justify-between lg:overflow-y-scroll bg-primary-4 border-primary-3 lg:border-b-0 lg:border-t-2 lg:h-full lg:w-auto"
   >
     <ul
       class="flex flex-grow px-2 py-2 space-x-1 overflow-x-scroll lg:w-full lg:flex-col lg:space-y-1 lg:space-x-0"
     >
       <!-- room -->
       <li class="flex items-center space-x-2 lg:flex-col lg:space-y-4 lg:space-x-0 lg:my-3">
-        <div class="xl:justify-start xl:w-full xl:flex xl:items-center xl:pl-2">
+        <div class="xl:justify-start xl:w-full xl:flex xl:items-center">
           <AppButton :icon="getCurrentRoom.icon" :color="getCurrentRoom.color" />
           <div
             class="hidden ml-2 text-sm font-semibold xl:flex-col text-yellow xl:flex xl:flex-grow"
@@ -43,15 +43,18 @@
       leave-active-class="transition-opacity duration-150"
       leave-to-class="opacity-0"
     >
-      <AppButton
-        icon="fa-thumbtack"
-        size="sm"
+      <div
         class="absolute xl:self-end xl:mr-4 lg:static lg:mb-4"
         v-if="isMenuOpen"
         style="bottom:-3.5rem; right:0.5rem"
-        :color="isSideBarOnTopActive ? 'accent-3' : 'accent-1'"
-        @click="toggleSideBarOnTop"
-      />
+      >
+        <AppButton
+          icon="fa-thumbtack"
+          size="sm"
+          :color="isSideBarOnTopActive ? 'accent-3' : 'accent-1'"
+          @click="toggleSideBarOnTop"
+        />
+      </div>
     </transition>
   </div>
 </template>

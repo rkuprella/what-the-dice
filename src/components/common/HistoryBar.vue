@@ -1,5 +1,7 @@
 <template>
-  <div class="flex-shrink-0 w-auto h-full py-2 overflow-y-scroll bg-primary-4">
+  <div
+    class="flex-shrink-0 w-auto h-full py-2 overflow-y-scroll bg-primary-4 lg:border-t-2 lg:border-primary-3"
+  >
     <ul class="flex flex-col justify-end flex-grow px-2 py-3 space-y-3">
       <!-- <li
         class="flex items-center justify-center"

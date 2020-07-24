@@ -7,21 +7,42 @@
       </a>
     </div>
     <div
+      class="flex flex-col items-center justify-center flex-grow px-4 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
+    >
+      <p class="font-semibold text-center text-highlight">{{ $t('createCharacterSheetIntro') }}</p>
+      <div class="flex items-center space-x-2">
+        <AppInputField
+          v-model="userName"
+          name="userName"
+          placeholder="Character name"
+          icon="meeple"
+        />
+        <AppButton
+          icon="notes"
+          :color="!userName ? 'accent-1' : 'highlight'"
+          class="px-4 py-2"
+          :disabled="!userName"
+          size="lg"
+          @click="joinRoom"
+        />
+      </div>
+    </div>
+    <div
       class="flex flex-col items-center justify-center flex-grow px-2 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
     >
-      <p
-        class="px-4 font-semibold text-center sm:px-16 text-highlight"
-      >Join an online room and roll with your friends</p>
-      <div class="flex space-x-2">
-        <div class="flex flex-col">
-          <AppInputField v-model="userName" name="userName" placeholder="Your name" icon="meeple" />
-          <AppInputField v-model="roomName" name="roomName" placeholder="Room" icon="fa-dungeon" />
-        </div>
+      <p class="font-semibold text-center text-highlight">{{ $t('joinRoomIntro') }}</p>
+      <div class="flex items-center space-x-2">
+        <AppInputField
+          v-model="roomName"
+          name="roomName"
+          placeholder="Room name"
+          icon="fa-dungeon"
+        />
         <AppButton
           icon="fa-dungeon"
-          :color="!userName || !roomName ? 'accent-1' : 'highlight'"
+          :color="!roomName ? 'accent-1' : 'highlight'"
           class="px-4 py-2"
-          :disabled="!userName || !roomName"
+          :disabled="!roomName"
           size="lg"
           @click="joinRoom"
         />
