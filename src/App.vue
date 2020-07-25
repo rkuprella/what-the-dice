@@ -1,5 +1,6 @@
 <template>
   <div
+    :lang="getLanguage"
     id="app"
     class="flex flex-col h-full overflow-hidden antialiased bg-primary-3"
     style="min-height: -webkit-fill-available;"
@@ -38,10 +39,10 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["getTheme", "isSettingsOpen"]),
+    ...mapGetters(["getTheme", "isSettingsOpen", "getLanguage"]),
   },
   methods: {
-    ...mapActions(["toggleTheme"]),
+    ...mapActions(["toggleTheme", "setLanguage"]),
   },
   created() {
     // setup dark mode from local storage or prefered color scheme
@@ -65,6 +66,7 @@ export default {
     if (localStorage.getItem("language")) {
       const language = localStorage.getItem("language");
       i18n.locale = language;
+      this.setLanguage(language);
     }
   },
 };

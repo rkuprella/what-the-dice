@@ -64,7 +64,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["closeSettings", "toggleTheme"]),
+    ...mapActions(["closeSettings", "toggleTheme", "setLanguage"]),
     escapeListener(e) {
       if (e.key === "Escape") {
         this.closeSettings();
@@ -73,6 +73,7 @@ export default {
     changeLocale(language) {
       i18n.locale = language;
       localStorage.setItem("language", language);
+      this.setLanguage(language);
     },
   },
   created() {

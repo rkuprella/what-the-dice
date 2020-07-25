@@ -1,5 +1,6 @@
 const state = {
     theme: 'light',
+    language: 'en',
     showMenu: false,
     allOptions: false,
     soundOn: true,
@@ -53,6 +54,7 @@ const state = {
 
 const getters = {
     getTheme: state => state.theme,
+    getLanguage: state => state.language,
     getCurrentRoom: state => state.currentRoom,
     isMenuOpen: state => state.showMenu,
     isAllOptionsActive: state => state.allOptions,
@@ -90,7 +92,9 @@ const mutations = {
     SET_CURRENT_ROOM: (state, payload) => {
         state.currentRoom = payload
     },
-    
+    SET_LANGUAGE: (state, payload) => {
+        state.language = payload
+    },
 }
 
 const actions = {
@@ -118,7 +122,9 @@ const actions = {
     setCurrentRoom({ commit }, payload) {
         commit('SET_CURRENT_ROOM', payload)
     },
-    
+    setLanguage({ commit }, payload) {
+        commit('SET_LANGUAGE', payload)
+    },
 }
 
 export default {
