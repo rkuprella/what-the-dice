@@ -30,7 +30,13 @@
     </div>-->
 
     <div class="relative flex px-2">
-      <AppButton icon="fa-cog" size="sm" @click="toggleSettings" class="mr-2 lg:hidden" />
+      <AppButton
+        icon="fa-cog"
+        size="sm"
+        color="accent-2"
+        @click="toggleSettings"
+        class="mr-2 lg:hidden"
+      />
       <AppInputField
         v-model="roomName"
         type="text"
