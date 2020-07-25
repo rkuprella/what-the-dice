@@ -1,11 +1,11 @@
 const state = {
-    currentRuleset: 'What the Dice',
+    currentRuleset: 'All the Dice',
     rulesets: [
         {
             id: 1,
-            name: 'What the Dice',
+            name: 'All the Dice',
             icon: 'wtd-icon',
-            diceList: ['D6', 'D20', 'Fudge', 'Coin']
+            diceList: ['D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100', 'Fudge', 'Coin']
         },
         {
             id: 2,

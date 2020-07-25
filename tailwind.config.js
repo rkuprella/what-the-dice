@@ -42,7 +42,8 @@ module.exports = {
         '84': '21rem'
       },
       translate: {
-        '2px': '2px'
+        '2px': '2px',
+        '-2px': '-2px',
       },
       borderRadius: {
         'xl': '2rem'
@@ -56,9 +57,11 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    translate: ['responsive', 'hover', 'focus', 'active'],
-    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover']
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'group-focus'],
+    textColor: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'group-focus'],
+    translate: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'group-focus'],
+    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'group-focus'],
+    opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'group-focus'],
   },
   plugins: [],
   purge: {

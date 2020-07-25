@@ -1,9 +1,16 @@
 <template>
   <div class="flex flex-col flex-grow py-4 pt-2 lg:pt-0 bg-primary-3">
     <div class="flex items-center px-2 lg:hidden">
-      <a href="#" title="What the Dice Documentation" class="flex items-center px-2 py-1 space-x-2">
+      <a
+        href="https://whatthedice.com"
+        title="What the Dice - Documentation"
+        class="flex items-center px-2 py-1 space-x-2"
+      >
         <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
-        <span class="text-label">Documentation</span>
+        <h1 class="flex items-center space-x-1 text-label">
+          <span>{{ $t('whatTheDice')}} - Docs</span>
+          <AppIcon icon="link" class="w-4 h-4" />
+        </h1>
       </a>
     </div>
     <DiceBagSwitcher />
@@ -37,33 +44,7 @@
         @click="toggleSettings"
         class="mr-2 lg:hidden"
       />
-      <AppInputField
-        v-model="roomName"
-        type="text"
-        name="roomName"
-        placeholder="Enter Room Name"
-        class="flex-grow"
-        icon="fa-dungeon"
-      />
-      <div class="absolute inset-y-0 right-0 flex items-center">
-        <transition
-          enter-class="opacity-0"
-          enter-active-class="transition-opacity duration-150"
-          enter-to-class="opacity-100"
-          leave-class="opacity-100"
-          leave-active-class="transition-opacity duration-150 delay-200"
-          leave-to-class="opacity-0"
-        >
-          <AppButton
-            icon="fa-signout"
-            class="mr-3"
-            v-if="roomName"
-            size="sm"
-            type="submit"
-            @click="joinRoom"
-          />
-        </transition>
-      </div>
+      <AppButton :text="$t('joinRoom')" size="xl" inverted class="w-full" />
     </div>
   </div>
 </template>
@@ -143,50 +124,8 @@ export default {
       ],
     };
   },
-  computed: {
-    ...mapGetters(["getTheme"]),
-    moreOptions: {
-      set() {
-        this.$store.dispatch("toggleAllOptions");
-      },
-      get() {
-        return this.$store.getters.isAllOptionsActive;
-      },
-    },
-  },
   methods: {
     ...mapActions(["toggleSettings"]),
-    joinRoom() {
-      const payload = {
-        id: "124e12",
-        name: "Temple of Vue",
-        icon: "barrel",
-        color: "yellow",
-        users: [
-          {
-            id: "4910213",
-            name: "Quabbe",
-            icon: "axe",
-          },
-          {
-            id: "2d2ds",
-            name: "Anna",
-            icon: "meeple",
-          },
-          {
-            id: "412",
-            name: "Charly24",
-            icon: "feather",
-          },
-          {
-            id: "12312",
-            name: "Eb3rh4rt",
-            icon: "troll",
-          },
-        ],
-      };
-      this.$store.dispatch("setCurrentRoom", payload);
-    },
   },
 };
 </script>

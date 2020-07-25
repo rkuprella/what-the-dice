@@ -12,8 +12,6 @@
         <small class="hidden mt-1 text-accent-2 lg:block">ESC</small>
       </div>
       <div class="flex-grow pl-2 pr-32 overflow-y-scroll">
-        <AppCheckBox text="Give me all the options" id="options" v-model="options" />
-
         <AppButton icon="fas-moon" size="sm" @click="toggleTheme" />
 
         <div>
@@ -26,6 +24,10 @@
               <flag :iso="language.flag" />
             </button>
           </li>
+        </div>
+        <h2 class="leading-5 text-center text-label">Super secret area</h2>
+        <div class="flex items-center justify-center p-2 mt-2 border-4 border-dashed border-danger">
+          <AppCheckBox text="GM Mode" id="options" v-model="options" />
         </div>
       </div>
     </div>

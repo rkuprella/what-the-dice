@@ -1,8 +1,18 @@
 <template>
   <nav class="flex items-center justify-between h-16 px-2 bg-primary-4">
     <div class="flex items-center">
-      <a href="#" title="What the Dice Documentation" class="flex items-center px-2 space-x-2">
-        <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
+      <a
+        href="https://whatthedice.com"
+        title="What the Dice - Documentation"
+        class="flex items-center px-2 py-1 space-x-2 transition-colors duration-150 rounded-lg focus:shadow-outline focus:outline-none group hover:bg-basic text-basic hover:text-accent-3 focus:text-accent-3 focus:bg-basic"
+      >
+        <AppIcon icon="wtd-icon" class="w-10 h-10" />
+        <h1
+          class="flex items-center space-x-1 transition duration-150 transform opacity-0 group-hover:opacity-100 text-label group-hover:text-accent-3 group-focus:text-accent-3 group-focus:opacity-100"
+        >
+          <span>{{ $t('whatTheDice')}} - Docs</span>
+          <AppIcon icon="link" class="w-4 h-4" />
+        </h1>
       </a>
     </div>
     <div class="flex items-center justify-end px-2">

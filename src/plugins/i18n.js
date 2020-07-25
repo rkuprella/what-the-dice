@@ -5,7 +5,7 @@ Vue.use(VueI18n);
 
 const messages = {
     'en': {
-        whatTheDice: 'What the Dice?!',
+        whatTheDice: 'What the Dice',
         enterDiceCode: 'Enter Dice Code',
         rollTheDice: 'Roll',
         joinRoom: 'Join a Room',
@@ -14,7 +14,7 @@ const messages = {
         joinRoomIntro: 'Join an online room and roll with your friends'
     },
     'de': {
-        whatTheDice: 'Was zum Würfel?!',
+        whatTheDice: 'Was zum Würfel',
         enterDiceCode: 'Dicecode eingeben',
         rollTheDice: 'Würfeln',
         joinRoom: 'Raum beitreten',
