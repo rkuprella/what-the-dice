@@ -11,8 +11,8 @@
 
       <!-- main area -->
       <div
-        class="flex flex-col flex-grow pb-2 lg:pb-4"
-        :class="[isSideBarOnTopActive && getCurrentRoom ? 'pt-20 lg:pt-0' : 'pt-2 lg:pt-0', isMenuOpen ? 'lg:w-2/3' : 'lg:max-w-6xl lg:mx-auto']"
+        class="flex flex-col flex-grow max-w-6xl pb-2 mx-auto lg:pb-4"
+        :class="[isSideBarOnTopActive && getCurrentRoom ? 'pt-20 lg:pt-0' : 'pt-2 lg:pt-0']"
       >
         <RollScrollArea />
         <!-- <div class="flex flex-grow overflow-hidden">

@@ -9,7 +9,7 @@
     <a class="sr-only" href="#main">Skip to dice rollers</a>
     <!-- wrapper -->
     <transition
-      enter-class="-translate-x-full opacity-0 lg:translate-x-0 lg:scale-75"
+      enter-class="translate-x-full opacity-0 lg:translate-x-0 lg:scale-75"
       enter-active-class="transition duration-200 ease-out transform lg:duration-300 lg:ease-bounce"
       enter-to-class="translate-x-0 opacity-100 lg:scale-100"
       leave-class="opacity-100 lg:scale-100"

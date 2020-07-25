@@ -11,16 +11,16 @@ const messages = {
         joinRoom: 'Join a Room',
         switchDiceBags: 'Switch or manage your dice bags',
         createCharacterSheetIntro: 'Create your character sheet and roll with mods',
-        joinRoomIntro: 'Join an online room and roll with your friends'
+        joinRoomIntro: 'Roll and chat with other players'
     },
     'de': {
-        whatTheDice: 'Was zum Würfel',
+        whatTheDice: 'What the Dice',
         enterDiceCode: 'Dicecode eingeben',
         rollTheDice: 'Würfeln',
         joinRoom: 'Raum beitreten',
         switchDiceBags: 'Würfelbecher auswählen oder bearbeiten',
         createCharacterSheetIntro: 'Erstelle einen Charakterbogen und füge Mods zu Deinen Würfen hinzu',
-        joinRoomIntro: 'Raum beitreten und online mit anderen Spielern würfeln'
+        joinRoomIntro: 'Mit anderen Spielern würfeln und chatten'
     }
 };
 

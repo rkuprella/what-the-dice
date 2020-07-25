@@ -8,7 +8,7 @@
       >
         <AppIcon icon="wtd-icon" class="w-10 h-10" />
         <h1
-          class="flex items-center space-x-1 transition duration-150 transform opacity-0 group-hover:opacity-100 text-label group-hover:text-accent-3 group-focus:text-accent-3 group-focus:opacity-100"
+          class="flex items-center space-x-1 font-semibold transition duration-150 transform opacity-0 group-hover:opacity-100 text-label group-hover:text-accent-3 group-focus:text-accent-3 group-focus:opacity-100"
         >
           <span>{{ $t('whatTheDice')}} - Docs</span>
           <AppIcon icon="link" class="w-4 h-4" />

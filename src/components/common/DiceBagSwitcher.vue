@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col flex-grow h-full px-2 py-2 space-y-2">
-    <div class="relative flex flex-col items-center justify-center flex-grow py-2">
+    <div class="relative flex flex-col items-center justify-center flex-grow py-2 space-y-4">
       <transition
         enter-class="scale-50 opacity-0"
         enter-active-class="transition duration-150 transform ease-bounce"
@@ -16,11 +16,11 @@
           class="w-32 h-32 text-basic"
         />
       </transition>
-      <div class="flex items-center mt-6 space-x-2">
+      <h2 class="text-center text-label">{{ $t('switchDiceBags')}}</h2>
+      <div class="flex items-center space-x-2">
         <AppInputSelect v-model="selected" :options="getNamesOfRulesets" />
         <AppButton icon="dice-cup" color="accent-2" badge="fas-plus" />
       </div>
-      <small class="mt-3 text-label">{{ $t('switchDiceBags')}}</small>
     </div>
   </div>
 </template>

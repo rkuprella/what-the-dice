@@ -48,7 +48,7 @@
         </transition>
       </div>
     </div>
-    <RollButton class="flex-grow-0 hidden w-24 ml-4 lg:flex" />
+    <RollButton class="hidden ml-4 lg:flex" />
   </div>
 </template>
 
