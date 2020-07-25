@@ -51,18 +51,28 @@
           class="absolute inset-0 flex flex-grow h-full mr-16 lg:ml-auto lg:mr-0 sm:mr-auto sm:w-84 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
           v-show="isMenuOpen"
         >
-          <TheChat v-if="getCurrentRoom" />
-          <TheMenu v-else />
+          <transition
+            enter-class="translate-x-full"
+            enter-active-class="transition-transform duration-150 ease-out transform"
+            enter-to-class="translate-x-0"
+            leave-class="translate-x-0"
+            leave-active-class="transition-transform duration-150 ease-in transform"
+            leave-to-class="translate-x-full"
+            mode="out-in"
+          >
+            <TheChat v-if="getCurrentRoom" />
+            <TheMenu v-else />
+          </transition>
         </div>
       </transition>
 
       <transition
-        enter-class="-translate-y-full lg:translate-x-full lg:translate-y-0"
-        enter-active-class="transition-transform duration-150 ease-out transform lg:duration-0 lg:transition-none"
-        enter-to-class="translate-y-0 lg:translate-x-0 lg:translate-y-0"
-        leave-class="translate-y-0 lg:translate-x-0 lg:translate-y-0"
-        leave-active-class="transition-transform duration-150 ease-in transform lg:duration-0 lg:transition-none"
-        leave-to-class="-translate-y-full lg:translate-x-full lg:translate-y-0"
+        enter-class="-translate-y-full lg:translate-y-0 lg:translate-x-full"
+        enter-active-class="transition-transform duration-150 ease-out transform"
+        enter-to-class="translate-0"
+        leave-class="translate-0"
+        leave-active-class="transition-transform duration-150 ease-in transform"
+        leave-to-class="-translate-y-full lg:translate-y-0 lg:translate-x-full"
       >
         <div
           class="absolute inset-x-0 top-0 z-20 flex-shrink-0 lg:static lg:w-18 xl:w-56"

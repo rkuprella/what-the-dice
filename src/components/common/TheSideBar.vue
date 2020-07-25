@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full border-b-2 lg:flex lg:flex-col lg:items-center lg:justify-between lg:overflow-y-scroll bg-primary-4 border-primary-3 lg:border-b-0 lg:border-t-2 lg:h-full lg:w-auto"
+    class="relative w-full lg:flex lg:flex-col lg:items-center lg:justify-between lg:overflow-y-scroll bg-gradient border-primary-3 lg:border-t-2 lg:h-full lg:w-auto"
   >
     <ul
       class="flex flex-grow px-2 py-2 space-x-1 overflow-x-scroll lg:w-full lg:flex-col lg:space-y-1 lg:space-x-0"
@@ -78,7 +78,6 @@ export default {
     leaveRoom() {
       const payload = null;
       this.$store.dispatch("setCurrentRoom", payload);
-      this.closeMenu();
     },
   },
 };
