@@ -15,8 +15,9 @@
         </h1>
       </a>
     </div>
-    <DiceBagSwitcher />
-    <!-- <div
+    <div class="flex flex-col flex-grow space-y-4 overflow-y-scroll">
+      <DiceBagSwitcher />
+      <!-- <div
       class="flex flex-col items-center justify-center flex-grow px-4 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
     >
       <p class="font-semibold text-center text-highlight">{{ $t('createCharacterSheetIntro') }}</p>
@@ -36,27 +37,28 @@
           @click="joinRoom"
         />
       </div>
-    </div>-->
-    <div class="flex flex-col space-y-4 lg:items-center">
-      <AppIcon icon="fa-dungeon" class="self-center w-16 h-16 text-accent-1" />
-      <h2 class="text-center text-label">{{$t('joinRoomIntro')}}</h2>
-      <div class="relative flex justify-between px-2">
-        <AppButton
-          icon="fa-cog"
-          size="sm"
-          color="accent-2"
-          @click="toggleSettings"
-          class="mr-2 lg:hidden"
-        />
-        <AppButton
-          :text="$t('joinRoom')"
-          size="xl"
-          wide
-          color="brand"
-          border
-          @click="showJoinRoom = true"
-        />
-        <div class="hidden w-12 ml-2 sm:block lg:hidden"></div>
+      </div>-->
+      <div class="flex flex-col flex-shrink-0 space-y-4 lg:items-center">
+        <AppIcon icon="fa-dungeon" class="self-center w-16 h-16 text-accent-1" />
+        <h2 class="text-center text-label">{{$t('joinRoomIntro')}}</h2>
+        <div class="relative flex justify-between px-2">
+          <AppButton
+            icon="fa-cog"
+            size="sm"
+            color="accent-2"
+            @click="toggleSettings"
+            class="mr-2 lg:hidden"
+          />
+          <AppButton
+            :text="$t('joinRoom')"
+            size="xl"
+            wide
+            color="brand"
+            border
+            @click="showJoinRoom = true"
+          />
+          <div class="hidden w-12 ml-2 sm:block lg:hidden"></div>
+        </div>
       </div>
     </div>
     <AppModal v-if="showJoinRoom" @hide="showJoinRoom = false">
