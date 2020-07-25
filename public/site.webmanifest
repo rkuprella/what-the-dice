@@ -1,5 +1,5 @@
 {
-    "name": "WTD",
+    "name": "What the Dice",
     "short_name": "WTD",
     "icons": [
         {
@@ -11,9 +11,15 @@
             "src": "img/icons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
-        }
+        },
+        {
+            "src": "img/icons/maskable_icon.png",
+            "sizes": "196x196",
+            "type": "image/png",
+            "purpose": "any maskable"
+          }
     ],
     "theme_color": "#743ee9",
-    "background_color": "#743ee9",
-    "display": "standalone"
+    "background_color": "#16191e",
+    "display": "fullscreen"
 }
