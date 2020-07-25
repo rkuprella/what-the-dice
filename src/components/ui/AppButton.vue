@@ -2,8 +2,8 @@
   <button
     :type="type"
     aria-label="Button"
-    class="relative flex flex-col items-center justify-center transition duration-150 transform select-none test focus:outline-none ease lg:focus:shadow-outline"
-    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow lg:flex-grow-0 lg:w-auto lg:px-4' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }, { 'active:scale-75 hover:scale-110' : squeeze }]"
+    class="relative flex flex-col items-center justify-center transition duration-100 transform select-none group test focus:outline-none ease lg:focus:shadow-outline"
+    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow lg:flex-grow-0 lg:w-auto lg:px-4' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-primary-2' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-primary-2' : isPressed }, { 'active:scale-75 hover:scale-110' : squeeze }, border ? `border-2 border-${color} hover:bg-${color} active:bg-${color} focus:bg-${color}` : '' ]"
     v-on="$listeners"
     v-bind="$attrs"
   >
@@ -19,8 +19,8 @@
     <!-- text -->
     <span
       v-if="text"
-      class="px-3 py-2 font-bold"
-      :class="['text-' + size, inverted ? 'text-primary-3' : 'text-label']"
+      class="px-3 py-2 font-bold transition-colors duraiton-100 ease"
+      :class="['text-' + size, inverted ? 'text-primary-3' : border ? `text-${color} group-hover:text-accent-3 group-focus:text-accent-3` : 'text-label' ]"
     >{{ getText }}</span>
 
     <!-- badge -->
@@ -88,6 +88,10 @@ export default {
     // adds a badge
     badge: {
       type: String,
+      required: false,
+    },
+    border: {
+      type: Boolean,
       required: false,
     },
   },

@@ -14,7 +14,7 @@
       enter-to-class="translate-x-0 opacity-100 lg:scale-100"
       leave-class="opacity-100 lg:scale-100"
       leave-active-class="transition duration-100 ease-in transform lg:duration-300 lg:ease-bounce"
-      leave-to-class="opacity-0 llg:scale-75"
+      leave-to-class="opacity-0 lg:scale-75"
       mode="out-in"
     >
       <TheSettingsWrapper v-if="isSettingsOpen" />

@@ -1,16 +1,14 @@
 <template>
-  <div class="flex items-center justify-between flex-shrink-0 h-16 px-2 space-x-2">
-    <div class="flex items-center justify-between flex-grow space-x-2">
-      <RollMacroSlot v-if="isAllOptionsActive" :macros="getRightMacroSlotList" icon="fa-history" />
-      <RollButton />
-      <RollMacroSlot
-        v-if="isAllOptionsActive"
-        right
-        isPressed
-        :macros="getRightMacroSlotList"
-        icon="fa-star"
-      />
-    </div>
+  <div class="flex items-center justify-between flex-shrink-0 h-16 px-2 space-x-3">
+    <RollMacroSlot v-if="isAllOptionsActive" :macros="getRightMacroSlotList" icon="fa-history" />
+    <RollButton />
+    <RollMacroSlot
+      v-if="isAllOptionsActive"
+      right
+      isPressed
+      :macros="getRightMacroSlotList"
+      icon="fa-star"
+    />
     <AppButton @click="toggleMenu" push icon="bars" :isPressed="isMenuOpen" />
   </div>
 </template>

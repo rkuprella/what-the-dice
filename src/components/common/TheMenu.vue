@@ -8,7 +8,7 @@
         title="What the Dice - Documentation"
         class="flex items-center px-2 py-1 space-x-2"
       >
-        <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
+        <AppIcon icon="wtd-icon" class="w-10 h-10 text-brand" />
         <h1 class="flex items-center space-x-1 font-semibold text-label">
           <span>{{ $t('whatTheDice')}} - Docs</span>
           <AppIcon icon="link" class="w-4 h-4" />
@@ -48,10 +48,20 @@
           @click="toggleSettings"
           class="mr-2 lg:hidden"
         />
-        <AppButton :text="$t('joinRoom')" size="xl" wide color="basic" inverted />
+        <AppButton
+          :text="$t('joinRoom')"
+          size="xl"
+          wide
+          color="brand"
+          border
+          @click="showJoinRoom = true"
+        />
         <div class="hidden w-12 ml-2 sm:block lg:hidden"></div>
       </div>
     </div>
+    <AppModal v-if="showJoinRoom" @hide="showJoinRoom = false">
+      <JoinRoom />
+    </AppModal>
   </div>
 </template>
 
@@ -62,6 +72,8 @@ import AppIcon from "@/components/ui/AppIcon";
 import DiceBagSwitcher from "@/components/common/DiceBagSwitcher";
 import AppInputField from "@/components/ui/AppInputField";
 import ChatMessage from "@/components/common/ChatMessage";
+import AppModal from "@/components/ui/AppModal";
+import JoinRoom from "@/components/room/JoinRoom";
 
 export default {
   components: {
@@ -70,9 +82,12 @@ export default {
     DiceBagSwitcher,
     AppInputField,
     ChatMessage,
+    AppModal,
+    JoinRoom,
   },
   data() {
     return {
+      showJoinRoom: false,
       text: "",
       userName: "",
       roomName: "",

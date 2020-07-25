@@ -13,7 +13,7 @@
         <AppIcon
           :icon="getCurrentRuleset.icon"
           :key="getCurrentRuleset.icon"
-          class="w-32 h-32 text-basic"
+          class="w-32 h-32 text-brand"
         />
       </transition>
       <h2 class="text-center text-label">{{ $t('switchDiceBags')}}</h2>

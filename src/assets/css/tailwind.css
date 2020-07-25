@@ -1,6 +1,7 @@
 @tailwind base;
 
 :root {
+    --brand: #743ee9;
     --success: #76d566;
     --danger: #d03d3d;
     --info: #38acc0;
@@ -16,7 +17,7 @@
     --label: #494550;
     --shadow: rgba(0,0,0,0.50);
     --transparent: rgba(0,0,0,0);
-    --basic: #743ee9;
+    --basic: #f2d7b9;
     --red: #d74754;
     --green: #4fdf6d;
     --yellow: #edd447;

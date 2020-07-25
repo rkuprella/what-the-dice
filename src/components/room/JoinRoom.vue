@@ -52,9 +52,7 @@ export default {
   components: {
     AppButton,
     AppIcon,
-    DiceBagSwitcher,
     AppInputField,
-    ChatMessage,
   },
   data() {
     return {

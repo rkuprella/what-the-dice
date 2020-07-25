@@ -1,6 +1,7 @@
 module.exports = {
   theme: {
     colors: {
+      'brand': 'var(--brand)',
       'shadow': 'var(--shadow)',
       'transparent': 'var(--transparent)',
       'success': 'var(--success)',
