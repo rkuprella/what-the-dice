@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-col flex-grow pt-2 pb-4 lg:pt-0 bg-primary-3">
+  <div
+    class="flex flex-col flex-grow pt-2 pb-4 bg-gradient lg:border-t-2 lg:pt-0 lg:border-primary-3"
+  >
     <div class="flex items-center px-2 lg:hidden">
       <a
         href="https://whatthedice.com"

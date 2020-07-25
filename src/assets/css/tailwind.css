@@ -35,6 +35,11 @@
     --label: #7a7685;
 }
 
+.bg-gradient {
+    background: var(--primary-3);
+    background: linear-gradient(180deg, var(--primary-4) 0%, var(--primary-3) 100%);
+}
+
 /* disable color overlay on tap */
 button, input, label, .tap-highlight-none {
     -webkit-tap-highlight-color: transparent;

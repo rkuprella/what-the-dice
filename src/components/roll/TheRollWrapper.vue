@@ -40,15 +40,15 @@
       </transition>
 
       <transition
-        enter-class="-translate-x-full lg:translate-x-0"
-        enter-active-class="transition-transform duration-150 ease-out transform lg:duration-0 lg:transition-none"
+        enter-class="-translate-x-full lg:translate-x-full"
+        enter-active-class="transition-transform duration-150 ease-out transform"
         enter-to-class="translate-x-0"
         leave-class="translate-x-0"
-        leave-active-class="transition-transform duration-150 ease-in transform lg:duration-0 lg:transition-none"
-        leave-to-class="-translate-x-full lg:translate-x-0"
+        leave-active-class="transition-transform duration-150 ease-in transform"
+        leave-to-class="-translate-x-full lg:translate-x-full"
       >
         <div
-          class="absolute inset-0 flex flex-grow h-full mr-16 sm:mr-auto sm:w-84 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
+          class="absolute inset-0 flex flex-grow h-full mr-16 lg:ml-auto lg:mr-0 sm:mr-auto sm:w-84 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
           v-show="isMenuOpen"
         >
           <TheChat v-if="getCurrentRoom" />

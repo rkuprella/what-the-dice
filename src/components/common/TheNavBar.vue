@@ -4,7 +4,7 @@
       <a
         href="https://whatthedice.com"
         title="What the Dice - Documentation"
-        class="flex items-center px-2 py-1 space-x-2 transition-colors duration-150 rounded-lg focus:shadow-outline focus:outline-none group hover:bg-basic text-basic hover:text-accent-3 focus:text-accent-3 focus:bg-basic"
+        class="flex items-center py-1 pl-2 pr-3 space-x-2 transition-colors duration-150 rounded-lg focus:shadow-outline focus:outline-none group hover:bg-basic text-basic hover:text-accent-3 focus:text-accent-3 focus:bg-basic"
       >
         <AppIcon icon="wtd-icon" class="w-10 h-10" />
         <h1
