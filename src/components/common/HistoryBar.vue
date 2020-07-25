@@ -2,7 +2,7 @@
   <div
     class="flex-shrink-0 w-auto h-full py-2 overflow-y-scroll bg-primary-4 lg:border-t-2 lg:border-primary-3"
   >
-    <ul class="flex flex-col justify-end flex-grow px-2 py-3 space-y-3">
+    <ul class="flex flex-col justify-end flex-grow px-2 py-2 space-y-3 lg:mb-1 lg:-ml-1">
       <!-- <li
         class="flex items-center justify-center"
         v-for="item in getRightMacroSlotList"

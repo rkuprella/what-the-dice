@@ -51,6 +51,7 @@
         <AppButton
           icon="fa-thumbtack"
           size="sm"
+          class="transform rotate-45 lg:rotate-0"
           :color="isSideBarOnTopActive ? 'accent-3' : 'accent-1'"
           @click="toggleSideBarOnTop"
         />

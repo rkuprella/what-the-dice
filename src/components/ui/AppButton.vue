@@ -2,14 +2,14 @@
   <button
     :type="type"
     aria-label="Button"
-    class="relative flex flex-col items-center justify-center transition duration-150 transform select-none focus:outline-none ease lg:focus:shadow-outline"
+    class="relative flex flex-col items-center justify-center transition duration-150 transform select-none test focus:outline-none ease lg:focus:shadow-outline"
     :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow lg:flex-grow-0 lg:w-auto lg:px-4' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-shadow' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-shadow' : isPressed }, { 'active:scale-75 hover:scale-110' : squeeze }]"
     v-on="$listeners"
     v-bind="$attrs"
   >
     <!-- icon -->
     <div
-      class="flex items-center justify-center w-12 h-12 transition duration-150 transform ease"
+      class="flex items-center justify-center w-12 h-12 transition duration-150 transform lg:w-10 lg:h-10 ease"
       :class="[ { 'text-primary-3' : inverted }, { 'active:translate-y-2px' : push }, isPressed ? 'translate-y-2px text-accent-2' : 'text-' + color ]"
       v-if="icon"
     >

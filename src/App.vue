@@ -8,12 +8,12 @@
     <a class="sr-only" href="#main">Skip to dice rollers</a>
     <!-- wrapper -->
     <transition
-      enter-class="scale-75 opacity-0"
-      enter-active-class="transition duration-300 transform ease-bounce"
-      enter-to-class="scale-100 opacity-100"
-      leave-class="scale-100 opacity-100"
-      leave-active-class="transition duration-300 transform ease-bounce"
-      leave-to-class="scale-75 opacity-0"
+      enter-class="-translate-x-full lg:translate-x-0 lg:scale-75 lg:opacity-0"
+      enter-active-class="transition duration-100 ease-out transform lg:duration-300 lg:ease-bounce"
+      enter-to-class="translate-x-0 lg:scale-100 lg:opacity-100"
+      leave-class="translate-x-0 lg:scale-100 lg:opacity-100"
+      leave-active-class="transition duration-100 ease-in transform lg:duration-300 lg:ease-bounce"
+      leave-to-class="-translate-x-full lg:translate-x-0 lg:scale-75 lg:opacity-0"
       mode="out-in"
     >
       <TheSettingsWrapper v-if="isSettingsOpen" />

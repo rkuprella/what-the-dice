@@ -13,6 +13,9 @@
       </div>
       <div class="flex-grow pl-2 pr-32 overflow-y-scroll">
         <AppCheckBox text="Give me all the options" id="options" v-model="options" />
+
+        <AppButton icon="fas-moon" size="sm" @click="toggleTheme" />
+
         <div>
           <li v-for="language in languages" :key="language.id">
             <button
@@ -59,7 +62,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["closeSettings"]),
+    ...mapActions(["closeSettings", "toggleTheme"]),
     escapeListener(e) {
       if (e.key === "Escape") {
         this.closeSettings();

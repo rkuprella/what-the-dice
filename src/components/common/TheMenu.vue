@@ -1,12 +1,13 @@
 <template>
-  <div class="flex flex-col flex-grow py-2 pt-2 lg:pt-0 bg-primary-3">
+  <div class="flex flex-col flex-grow py-4 pt-2 lg:pt-0 bg-primary-3">
     <div class="flex items-center px-2 lg:hidden">
       <a href="#" title="What the Dice Documentation" class="flex items-center px-2 py-1 space-x-2">
         <AppIcon icon="wtd-icon" class="w-10 h-10 text-basic" />
         <span class="text-label">Documentation</span>
       </a>
     </div>
-    <div
+    <DiceBagSwitcher />
+    <!-- <div
       class="flex flex-col items-center justify-center flex-grow px-4 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
     >
       <p class="font-semibold text-center text-highlight">{{ $t('createCharacterSheetIntro') }}</p>
@@ -26,30 +27,37 @@
           @click="joinRoom"
         />
       </div>
-    </div>
-    <div
-      class="flex flex-col items-center justify-center flex-grow px-2 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
-    >
-      <p class="font-semibold text-center text-highlight">{{ $t('joinRoomIntro') }}</p>
-      <div class="flex items-center space-x-2">
-        <AppInputField
-          v-model="roomName"
-          name="roomName"
-          placeholder="Room name"
-          icon="fa-dungeon"
-        />
-        <AppButton
-          icon="fa-dungeon"
-          :color="!roomName ? 'accent-1' : 'highlight'"
-          class="px-4 py-2"
-          :disabled="!roomName"
-          size="lg"
-          @click="joinRoom"
-        />
+    </div>-->
+
+    <div class="relative flex px-2">
+      <AppButton icon="fa-cog" size="sm" @click="toggleSettings" class="mr-2 lg:hidden" />
+      <AppInputField
+        v-model="roomName"
+        type="text"
+        name="roomName"
+        placeholder="Enter Room Name"
+        class="flex-grow"
+        icon="fa-dungeon"
+      />
+      <div class="absolute inset-y-0 right-0 flex items-center">
+        <transition
+          enter-class="opacity-0"
+          enter-active-class="transition-opacity duration-150"
+          enter-to-class="opacity-100"
+          leave-class="opacity-100"
+          leave-active-class="transition-opacity duration-150 delay-200"
+          leave-to-class="opacity-0"
+        >
+          <AppButton
+            icon="fa-signout"
+            class="mr-3"
+            v-if="roomName"
+            size="sm"
+            type="submit"
+            @click="joinRoom"
+          />
+        </transition>
       </div>
-    </div>
-    <div class="flex justify-start px-2 lg:hidden">
-      <AppButton icon="fas-moon" size="sm" @click="toggleTheme" />
     </div>
   </div>
 </template>
@@ -58,6 +66,7 @@
 import { mapActions, mapGetters } from "vuex";
 import AppButton from "@/components/ui/AppButton";
 import AppIcon from "@/components/ui/AppIcon";
+import DiceBagSwitcher from "@/components/common/DiceBagSwitcher";
 import AppInputField from "@/components/ui/AppInputField";
 import ChatMessage from "@/components/common/ChatMessage";
 
@@ -65,6 +74,7 @@ export default {
   components: {
     AppButton,
     AppIcon,
+    DiceBagSwitcher,
     AppInputField,
     ChatMessage,
   },
@@ -139,7 +149,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["toggleTheme"]),
+    ...mapActions(["toggleSettings"]),
     joinRoom() {
       const payload = {
         id: "124e12",

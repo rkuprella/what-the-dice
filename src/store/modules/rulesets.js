@@ -9,7 +9,7 @@ const state = {
         },
         {
             id: 2,
-            name: 'D&D 5e',
+            name: 'D&D',
             icon: 'dandd',
             diceList: ['D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100']
         },

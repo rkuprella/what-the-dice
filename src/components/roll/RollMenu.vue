@@ -1,6 +1,5 @@
 <template>
   <div class="flex items-center justify-between flex-shrink-0 h-16 px-2 space-x-2">
-    <AppButton @click="toggleSettings" push icon="fa-cog" :isPressed="isSettingsOpen" />
     <div class="flex items-center justify-between flex-grow space-x-2">
       <RollMacroSlot v-if="isAllOptionsActive" :macros="getRightMacroSlotList" icon="fa-history" />
       <RollButton />
@@ -36,14 +35,13 @@ export default {
   computed: {
     ...mapGetters([
       "isMenuOpen",
-      "isSettingsOpen",
       "isAllOptionsActive",
       "getLeftMacroSlotList",
       "getRightMacroSlotList",
     ]),
   },
   methods: {
-    ...mapActions(["toggleMenu", "toggleSettings"]),
+    ...mapActions(["toggleMenu"]),
   },
 };
 </script>
