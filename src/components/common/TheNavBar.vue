@@ -12,7 +12,7 @@
         >
           <span>{{ $t('whatTheDice')}} - Docs</span>
           <AppIcon icon="link" class="w-4 h-4" />
-        </h1>Huhu
+        </h1>
       </a>
     </div>
     <div class="flex items-center justify-end px-2">
