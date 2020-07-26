@@ -48,7 +48,7 @@
         leave-to-class="-translate-x-full lg:translate-x-full"
       >
         <div
-          class="absolute inset-0 flex flex-grow h-full mr-16 lg:ml-auto lg:mr-0 sm:mr-auto sm:w-84 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
+          class="absolute inset-0 flex flex-grow mr-16 lg:ml-auto lg:mr-0 sm:mr-auto sm:w-84 lg:relative lg:flex-grow-0 lg:flex-shrink-0"
           v-show="isMenuOpen"
         >
           <transition

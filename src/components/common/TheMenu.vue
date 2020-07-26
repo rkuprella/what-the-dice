@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex flex-col flex-grow pt-2 pb-4 bg-gradient lg:border-t-2 lg:pt-0 lg:border-primary-3"
-  >
+  <div class="flex flex-col flex-grow pt-2 bg-gradient lg:border-t-2 lg:pt-0 lg:border-primary-3">
     <div class="flex items-center px-2 lg:hidden">
       <a
         href="https://whatthedice.com"
@@ -15,7 +13,7 @@
         </h1>
       </a>
     </div>
-    <div class="flex flex-col flex-grow space-y-4 overflow-y-scroll">
+    <div class="flex flex-col flex-grow pb-4 space-y-4 overflow-y-scroll">
       <DiceBagSwitcher />
       <!-- <div
       class="flex flex-col items-center justify-center flex-grow px-4 mt-3 mb-2 space-y-4 overflow-y-scroll lg:mt-0"
