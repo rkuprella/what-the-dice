@@ -52,12 +52,12 @@
           v-show="isMenuOpen"
         >
           <transition
-            enter-class="translate-x-full"
+            enter-class="-translate-x-full lg:translate-x-full"
             enter-active-class="transition-transform duration-150 ease-out transform"
             enter-to-class="translate-x-0"
             leave-class="translate-x-0"
             leave-active-class="transition-transform duration-150 ease-in transform"
-            leave-to-class="translate-x-full"
+            leave-to-class="-translate-x-full lg:translate-x-full"
             mode="out-in"
           >
             <TheChat v-if="getCurrentRoom" />

@@ -3,7 +3,7 @@
     :type="type"
     aria-label="Button"
     class="relative flex flex-col items-center justify-center transition duration-100 transform select-none group test focus:outline-none ease lg:focus:shadow-outline"
-    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow lg:flex-grow-0 lg:w-auto lg:px-4' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-primary-2' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-primary-2' : isPressed }, { 'active:scale-75 hover:scale-110' : squeeze }, border ? `border-2 border-${color} hover:bg-${color} active:bg-${color} focus:bg-${color}` : '' ]"
+    :class="[ inverted ? 'bg-' + color : '', wide ? 'rounded-full h-12 flex-grow lg:flex-grow-0 lg:w-auto lg:px-4' : 'rounded-lg', { 'rounded-xl' : text }, { 'active:bg-primary-2' : push && !wide }, { ' active:translate-y-2px' : push && wide }, { 'bg-primary-2' : !border && isPressed }, { 'active:scale-75 hover:scale-110' : squeeze }, border ? `border-2 border-${color} hover:bg-${color} active:bg-${color} focus:bg-${color}` : '', border && isPressed ? `bg-${color} hover:bg-${color} active:bg-${color} focus:bg-${color}` : '' ]"
     v-on="$listeners"
     v-bind="$attrs"
   >
@@ -20,7 +20,7 @@
     <span
       v-if="text"
       class="px-3 py-2 font-bold transition-colors duraiton-100 ease"
-      :class="['text-' + size, inverted ? 'text-primary-3' : border ? `text-${color} group-hover:text-accent-3 group-focus:text-accent-3` : 'text-label' ]"
+      :class="['text-' + size, inverted ? 'text-primary-3' : border ? `text-${color} group-hover:text-accent-3 group-focus:text-accent-3` : 'text-label', border && isPressed ? 'text-accent-3' : '']"
     >{{ getText }}</span>
 
     <!-- badge -->

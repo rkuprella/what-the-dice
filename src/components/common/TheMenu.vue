@@ -53,6 +53,7 @@
             wide
             color="brand"
             border
+            :isPressed="showJoinRoom"
             @click="showJoinRoom = true"
           />
           <div class="hidden w-12 ml-2 sm:block lg:hidden"></div>
